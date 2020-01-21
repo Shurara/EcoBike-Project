@@ -7,9 +7,9 @@ public class UserInterface {
 
 
         System.out.println("=========================================================");
-        System.out.println("|          Please make your choice                      |");
+        System.out.println("|               Please make your choice                 |");
         System.out.println("=========================================================");
-        System.out.println("|                 Options:                              |");
+        System.out.println("|                       Options:                        |");
         System.out.println("|        1.  Show the entire EcoBike catalog            |");
         System.out.println("|        2.  Add a new folding bike                     |");
         System.out.println("|        3.  Add a new speedelec                        |");
