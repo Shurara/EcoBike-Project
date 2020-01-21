@@ -18,19 +18,22 @@ public class UserInterface {
         System.out.println("|        6.  Write to file                              |");
         System.out.println("|        7.  Stop the program                           |");
         System.out.println("=========================================================");
-        System.out.println("Enter number from 1 to 7 :   ");
-        Scanner scanner = new Scanner(System.in);
-        int inputValue;
-        inputValue = scanner.nextInt();
-           /* */
 
-        while(inputValue >7||inputValue <1){
-            System.out.println("Please enter number from 1 to 7 :   ");
-            inputValue = scanner.nextInt();
-        }
+        Scanner sc = new Scanner(System.in);
+        int number;
+        do {
+            System.out.println("Please enter the number of task from 1 to 7");
+            while (!sc.hasNextInt()) {
+                System.out.println("That's not a number! Try again)");
+                sc.next(); // this is important!
+            }
+            number = sc.nextInt();
+        } while (number < 1 || number > 7);
+        System.out.println("Thank you! Got " + number);
+
 
         // Switch construct
-        switch (inputValue) {
+        switch (number) {
             case 1:
                 System.out.println("Option 1 selected");
                 break;
@@ -52,9 +55,9 @@ public class UserInterface {
             case 7:
                 System.out.println("Exit selected");
                 break;
-            default:
+           /* default:
                 System.out.println("Invalid selection, please select option");
-                break; // This break is not really necessary
+                break; // This break is not really necessary*/
         }
     }
 }

@@ -8,15 +8,7 @@ public class BikeFactory implements Factory {
         Bike bike = new Bike();
         switch (bikeType) {
             case "FOLDING BIKE":
-                bike = new FoldingBike.Builder().setBikeType("FOLDING BIKE")
-                        .setBrand(properties[0].trim())
-                        .setWheelsSizeInch(Integer.parseInt(properties[1].trim()))
-                        .setGearsNumber(Integer.parseInt(properties[2].trim()))
-                        .setBikeWeight(Integer.parseInt(properties[3].trim()))
-                        .setFrontAndBackLight(Boolean.parseBoolean(properties[4].trim()))
-                        .setColor(properties[5].trim())
-                        .setPrice(Integer.parseInt(properties[6].trim()))
-                        .build();
+                bike = getFoldingBike(properties);
                 break;
             case "SPEEDELEC":
                 bike = new ElectroBike.Builder().setBikeType("SPEEDELEC")
@@ -43,6 +35,18 @@ public class BikeFactory implements Factory {
         return bike;
 
 
+    }
+
+    private FoldingBike getFoldingBike(String[] properties) {
+        return new FoldingBike.Builder().setBikeType("FOLDING BIKE")
+                .setBrand(properties[0].trim())
+                .setWheelsSizeInch(Integer.parseInt(properties[1].trim()))
+                .setGearsNumber(Integer.parseInt(properties[2].trim()))
+                .setBikeWeight(Integer.parseInt(properties[3].trim()))
+                .setFrontAndBackLight(Boolean.parseBoolean(properties[4].trim()))
+                .setColor(properties[5].trim())
+                .setPrice(Integer.parseInt(properties[6].trim()))
+                .build();
     }
 
 }
