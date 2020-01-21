@@ -55,9 +55,6 @@ public class UserInterface {
             case 7:
                 System.out.println("Exit selected");
                 break;
-           /* default:
-                System.out.println("Invalid selection, please select option");
-                break; // This break is not really necessary*/
         }
     }
 }
