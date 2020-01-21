@@ -25,7 +25,7 @@ public class DataWriter {
         }
         if (input.startsWith("E-BIKE")) {
             String[] eBikeProps = input.substring(7).trim().split(";");
-            System.out.println(eBikeProps)
+            System.out.println(eBikeProps);
 
         }
 
