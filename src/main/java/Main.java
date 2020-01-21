@@ -16,7 +16,7 @@ public class Main {
         //Path path = Paths.get("src/test.txt");
         List<Bike> listFromFile = new DataWriter().getDataFromFile(path)
                 .stream()
-                .map(string -> StringToBikeParser.parseModels(string))
+                .map(string -> StringToBikeParser.parseProperties(string))
                 .collect(Collectors.toList());
                 //.forEach(System.out::println);
 

@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class UserInterface {
     public void createStartMenu(){
-        Scanner scanner = new Scanner(System.in);
-        int inputValue;
+
 
         System.out.println("=========================================================");
         System.out.println("|          Please make your choice                      |");
@@ -19,8 +18,16 @@ public class UserInterface {
         System.out.println("|        6.  Write to file                              |");
         System.out.println("|        7.  Stop the program                           |");
         System.out.println("=========================================================");
-        System.out.println("Input number from 1 to 7 :   ");
+        System.out.println("Enter number from 1 to 7 :   ");
+        Scanner scanner = new Scanner(System.in);
+        int inputValue;
         inputValue = scanner.nextInt();
+           /* */
+
+        while(inputValue >7||inputValue <1){
+            System.out.println("Please enter number from 1 to 7 :   ");
+            inputValue = scanner.nextInt();
+        }
 
         // Switch construct
         switch (inputValue) {
