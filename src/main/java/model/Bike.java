@@ -14,7 +14,15 @@ public class Bike {
         return result;
     }
 
+    public Bike() {
+    }
 
-
-
+    public Bike(String bikeType, String brand, int bikeWeight, boolean isFrontAndBackLight, String color, int price) {
+        this.bikeType = bikeType;
+        this.brand = brand;
+        this.bikeWeight = bikeWeight;
+        this.isFrontAndBackLight = isFrontAndBackLight;
+        this.color = color;
+        this.price = price;
+    }
 }

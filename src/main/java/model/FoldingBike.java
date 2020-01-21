@@ -1,10 +1,14 @@
 package model;
 
 public class FoldingBike extends Bike {
-    public int wheelsSizeInch;
-    public int gearsNumber;
+    private int wheelsSizeInch;
+    private int gearsNumber;
 
-
+    public FoldingBike(String bikeType, String brand, int wheelsSizeInch, int gearsNumber, int bikeWeight, boolean isFrontAndBackLight, String color, int price) {
+        super(bikeType, brand, bikeWeight, isFrontAndBackLight, color, price);
+        this.wheelsSizeInch = wheelsSizeInch;
+        this.gearsNumber = gearsNumber;
+    }
 
     public String toString() {
         return this.bikeType + " " + brand + " with " +
@@ -12,4 +16,74 @@ public class FoldingBike extends Bike {
                 getLightInfo(isFrontAndBackLight) +
                 "\nPrice: " + price + " euros.";
     }
+
+    public int getWheelsSizeInch() {
+        return wheelsSizeInch;
+    }
+
+    public int getGearsNumber() {
+        return gearsNumber;
+    }
+
+    public static class Builder {
+        private String bikeType;
+        private String brand;
+        private int wheelsSizeInch;
+        private int gearsNumber;
+        private int bikeWeight;
+        private boolean isFrontAndBackLight;
+        private String color;
+        private int price;
+
+
+        public Builder() {
+        }
+
+        public Builder setBikeType(String bikeType) {
+            this.bikeType = bikeType;
+            return this;
+        }
+
+        public Builder setBrand(String brand) {
+            this.brand = brand;
+            return this;
+        }
+
+        public Builder setWheelsSizeInch(int wheelsSizeInch) {
+            this.wheelsSizeInch = wheelsSizeInch;
+            return this;
+        }
+
+        public Builder setGearsNumber(int gearsNumber) {
+            this.gearsNumber = gearsNumber;
+            return this;
+        }
+
+        public Builder setBikeWeight(int bikeWeight) {
+            this.bikeWeight = bikeWeight;
+            return this;
+        }
+
+        public Builder setFrontAndBackLight(boolean isFrontAndBackLight) {
+            this.isFrontAndBackLight = isFrontAndBackLight;
+            return this;
+        }
+
+        public Builder setColor(String color) {
+            this.color = color;
+            return this;
+        }
+
+        public Builder setPrice(int price) {
+            this.price = price;
+            return this;
+        }
+
+        public FoldingBike build() {
+            return new FoldingBike(bikeType, brand, wheelsSizeInch, gearsNumber, bikeWeight, isFrontAndBackLight, color, price);
+        }
+
+    }
+
+
 }

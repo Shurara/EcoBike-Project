@@ -1,21 +1,28 @@
 package file_processing;
 
+import factories.BikeFactory;
+import model.Bike;
+
 public class StringToBikeParser {
-    public static void parseModels(String input) {
+    public static Bike parseModels(String input) {
+        String bikeType = "";
+        String[] properties = new String[6];
+        BikeFactory bikeFactory = new BikeFactory();
 
         if (input.startsWith("FOLDING BIKE")) {
-            String[] foldingBikeProps = input.substring(13).trim().split(";");
-            System.out.println(foldingBikeProps.length);
+            bikeType = "FOLDING BIKE";
+            properties = input.substring(13).trim().split(";");
         }
         if (input.startsWith("SPEEDELEC")) {
-            String[] speedelecProps = input.substring(10).trim().split(";");
-            System.out.println(speedelecProps);
+            bikeType = "SPEEDELEC";
+            properties = input.substring(10).trim().split(";");
         }
         if (input.startsWith("E-BIKE")) {
-            String[] eBikeProps = input.substring(7).trim().split(";");
-            System.out.println(eBikeProps);
-
+            bikeType = "E-BIKE";
+            properties = input.substring(7).trim().split(";");
         }
+
+        return bikeFactory.getBike(bikeType, properties);
 
     }
 }
