@@ -17,6 +17,7 @@ public class DataChecker {
             number = sc.nextInt();
         } while (predicate.test(number));
         System.out.println("Thank you!");
+        System.out.println();
         return number;
     }
 
@@ -28,7 +29,20 @@ public class DataChecker {
             input = sc.nextLine();
         } while (breakPredicate.test(input));
         System.out.println("Thank you!");
+        System.out.println("");
         return input;
+    }
+
+    public static boolean getBooleanValue(Predicate<String> breakPredicate, String mistakeMessage) {
+        Scanner sc = new Scanner(System.in);
+        String input;
+        do {
+            System.out.println(mistakeMessage);
+            input = sc.next();
+        } while (breakPredicate.test(input));
+        System.out.println("Thank you!");
+        System.out.println("");
+        return Boolean.parseBoolean(input);
     }
 
 
