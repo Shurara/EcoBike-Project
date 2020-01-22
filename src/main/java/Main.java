@@ -20,11 +20,11 @@ public class Main {
                 .collect(Collectors.toList());
                 //.forEach(System.out::println);
 
-        //listFromFile.stream().forEach(System.out::println);
+        listFromFile.stream().forEach(System.out::println);
 
 
 
-        new UserInterface().createStartMenu();
+        //new UserInterface().createStartMenu();
 
 
     }

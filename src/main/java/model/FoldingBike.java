@@ -4,14 +4,14 @@ public class FoldingBike extends Bike {
     private int wheelsSizeInch;
     private int gearsNumber;
 
-    public FoldingBike(String bikeType, String brand, int wheelsSizeInch, int gearsNumber, int bikeWeight, boolean isFrontAndBackLight, String color, int price) {
-        super(bikeType, brand, bikeWeight, isFrontAndBackLight, color, price);
+    public FoldingBike(String brand, int wheelsSizeInch, int gearsNumber, int bikeWeight, boolean isFrontAndBackLight, String color, int price) {
+        super(brand, bikeWeight, isFrontAndBackLight, color, price);
         this.wheelsSizeInch = wheelsSizeInch;
         this.gearsNumber = gearsNumber;
     }
 
     public String toString() {
-        return this.bikeType + " " + brand + " with " +
+        return "FOLDING BIKE " + brand + " with " +
                 gearsNumber + " gear(s) " +
                 getLightInfo(isFrontAndBackLight) +
                 "\nPrice: " + price + " euros.";
@@ -26,7 +26,6 @@ public class FoldingBike extends Bike {
     }
 
     public static class Builder {
-        private String bikeType;
         private String brand;
         private int wheelsSizeInch;
         private int gearsNumber;
@@ -39,10 +38,6 @@ public class FoldingBike extends Bike {
         public Builder() {
         }
 
-        public Builder setBikeType(String bikeType) {
-            this.bikeType = bikeType;
-            return this;
-        }
 
         public Builder setBrand(String brand) {
             this.brand = brand;
@@ -80,7 +75,7 @@ public class FoldingBike extends Bike {
         }
 
         public FoldingBike build() {
-            return new FoldingBike(bikeType, brand, wheelsSizeInch, gearsNumber, bikeWeight, isFrontAndBackLight, color, price);
+            return new FoldingBike(brand, wheelsSizeInch, gearsNumber, bikeWeight, isFrontAndBackLight, color, price);
         }
 
     }

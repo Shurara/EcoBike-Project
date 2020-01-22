@@ -4,23 +4,22 @@ public class ElectroBike extends Bike {
     public int maxSpeed;
     public int batteryCapacity;
 
-    public ElectroBike(String bikeType, String brand, int maxSpeed, int bikeWeight, boolean isFrontAndBackLight, int batteryCapacity, String color, int price) {
-        super(bikeType, brand, bikeWeight, isFrontAndBackLight, color, price);
+    public ElectroBike(String brand, int maxSpeed, int bikeWeight, boolean isFrontAndBackLight, int batteryCapacity, String color, int price) {
+        super(brand, bikeWeight, isFrontAndBackLight, color, price);
         this.maxSpeed = maxSpeed;
         this.batteryCapacity = batteryCapacity;
     }
 
 
-    @Override
     public String toString() {
-        return "" + this.bikeType + " " + brand + " with " + batteryCapacity
+        return brand + " with " + batteryCapacity
                 + " mAh battery " + getLightInfo(isFrontAndBackLight)
                 + "\nPrice: " + price + " euros.";
 
     }
 
     public static class Builder {
-        private String bikeType;
+        public String bikeType;
         private String brand;
         private int maxSpeed;
         private int bikeWeight;
@@ -31,11 +30,6 @@ public class ElectroBike extends Bike {
 
 
         public Builder() {
-        }
-
-        public ElectroBike.Builder setBikeType(String bikeType) {
-            this.bikeType = bikeType;
-            return this;
         }
 
         public ElectroBike.Builder setBrand(String brand) {
@@ -74,8 +68,16 @@ public class ElectroBike extends Bike {
             return this;
         }
 
-        public ElectroBike build() {
-            return new ElectroBike(bikeType, brand, maxSpeed, bikeWeight, isFrontAndBackLight, batteryCapacity, color, price);
+        public ElectroBike build(String bikeType) {
+            ElectroBike electroBike = new Speedelec(brand, maxSpeed, bikeWeight, isFrontAndBackLight, batteryCapacity, color, price);
+            if("SPEEDELEC".equals(bikeType)){
+               return electroBike;
+            }
+            if("E-BIKE".equals(bikeType)){
+                electroBike = new EBike(brand, maxSpeed, bikeWeight, isFrontAndBackLight, batteryCapacity, color, price);
+            }
+            return electroBike;
+
         }
 
     }

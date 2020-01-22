@@ -2,7 +2,7 @@ package model;
 
 public class Bike {
 
-    public String bikeType;
+    //public String bikeType;
     public String brand;
     public  int bikeWeight;
     public boolean isFrontAndBackLight;
@@ -17,8 +17,7 @@ public class Bike {
     public Bike() {
     }
 
-    public Bike(String bikeType, String brand, int bikeWeight, boolean isFrontAndBackLight, String color, int price) {
-        this.bikeType = bikeType;
+    public Bike(String brand, int bikeWeight, boolean isFrontAndBackLight, String color, int price) {
         this.brand = brand;
         this.bikeWeight = bikeWeight;
         this.isFrontAndBackLight = isFrontAndBackLight;
