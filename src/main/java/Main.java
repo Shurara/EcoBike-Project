@@ -4,6 +4,7 @@ import data_processing.DataWriter;
 import data_processing.StringToBikeParser;
 import model.Bike;
 import model.Speedelec;
+import ui.DataChecker;
 import ui.UserInterface;
 
 import java.nio.file.Path;
@@ -21,6 +22,9 @@ public class Main {
         UserInterface userInterface = new UserInterface();
         userInterface.createStartMenu();
         userInterface.getUserSelection();
+
+       /*int n = DataChecker.getNubmerProperty(i -> i>0);
+        System.out.println(n);*/
 
 
     }

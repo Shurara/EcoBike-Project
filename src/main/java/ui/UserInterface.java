@@ -5,7 +5,7 @@ import data_processing.BikeCatalog;
 import java.util.Scanner;
 
 public class UserInterface {
-    public void createStartMenu(){
+    public void createStartMenu() {
 
         System.out.println("=========================================================");
         System.out.println("|               Please make your choice                 |");
@@ -24,21 +24,9 @@ public class UserInterface {
     }
 
     public void getUserSelection() {
-        Scanner sc = new Scanner(System.in);
-        int number;
-        do {
-            System.out.println("Please enter the number of task from 1 to 7");
-            while (!sc.hasNextInt()) {
-                System.out.println("That's not a number! Try again)");
-                sc.next(); // this is important!
-            }
-            number = sc.nextInt();
-        } while (number < 1 || number > 7);
-        System.out.println("Thank you!");
-
-
+        int taskNumber = DataChecker.getNubmerProperty(i -> i< 1 || i > 7, "Please enter the number of task from 1 to 7");
         // Switch construct
-        switch (number) {
+        switch (taskNumber) {
             case 1:
                 System.out.println("You selected - Show the entire EcoBike catalog");
                 System.out.println("**********************************************");
@@ -48,6 +36,8 @@ public class UserInterface {
                 break;
             case 2:
                 System.out.println("You selected - Add a new folding bike");
+                System.out.println("**********************************************");
+                System.out.println("Ok! Lets add a new folding bike");
                 break;
             case 3:
                 System.out.println("You selected - Add a new speedelec");
@@ -71,24 +61,24 @@ public class UserInterface {
         }
 
     }
-    private void pressAnyKeyToContinue(){
+
+    private void pressAnyKeyToContinue() {
         System.out.println("Press Enter key to continue...");
-        try
-        {
+        try {
             System.in.read();
+        } catch (Exception e) {
         }
-        catch(Exception e)
-        {}
     }
-    private void returnToMineMenu(){
+
+    private void returnToMineMenu() {
+        System.out.println();
+        System.out.println("**********************************************");
         System.out.println("To return to mine menu press any key");
-        try
-        {
+        try {
             System.in.read();
             createStartMenu();
+        } catch (Exception e) {
         }
-        catch(Exception e)
-        {}
     }
 
 }
