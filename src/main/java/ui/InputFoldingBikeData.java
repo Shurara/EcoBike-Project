@@ -11,13 +11,13 @@ public class InputFoldingBikeData {
         String brand = scanner.nextLine();
 
         System.out.println("Please input the size of the wheels (in inch) for Folding Bike..");
-        int wheelsSizeInch = DataChecker.getNubmerValue(i -> i > 0, "Please enter the number of task from 1 to 7");
+        int wheelsSizeInch = DataChecker.getNubmerValue(i -> i > 0, "Entered the number must be > 0");
 
         System.out.println("Please input the number of gears for Folding Bike..");
-        int gearsNumber = scanner.nextInt();
+        int gearsNumber = DataChecker.getNubmerValue(i -> i > 0, "Entered the number must be > 0");
 
         System.out.println("Please input the weight of the bike (in grams) for Folding Bike..");
-        int bikeWeight = scanner.nextInt();
+        int bikeWeight = DataChecker.getNubmerValue(i -> i > 0, "Entered the number must be > 0");
 
         System.out.println("Please input the availability of lights at front and back (TRUE/FALSE) for Folding Bike..");
         boolean isFrontAndBackLight = scanner.nextBoolean();
@@ -26,7 +26,7 @@ public class InputFoldingBikeData {
         String color = scanner.nextLine();
 
         System.out.println("Please input the price for Folding Bike..");
-        int price = scanner.nextInt();
+        int price = DataChecker.getNubmerValue(i -> i > 0, "Entered the number must be > 0");
 
         return properties;
     }

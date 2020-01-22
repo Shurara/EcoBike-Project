@@ -22,9 +22,20 @@ public class DataChecker {
         return number;
     }
 
-    public static String getStringValue(){
-        return "";
-    }
+    /*public static String getStringValue(Predicate<String> predicate, String mistakeMessage){
+        Scanner sc = new Scanner(System.in);
+        String input;
+        do {
+            System.out.println(mistakeMessage);
+            while (!sc.hasNext()) {
+                System.out.println("That's not a number! Try again)");
+                sc.next(); // this is important!
+            }
+            input = sc.nextLine();
+        } while (predicate.test(predicate.test(input)));
+        System.out.println("Thank you!");
+        return input;
+    }*/
 }
 
 

@@ -24,7 +24,7 @@ public class UserInterface {
     }
 
     public void getUserSelection() {
-        int taskNumber = DataChecker.getNubmerProperty(i -> i< 1 || i > 7, "Please enter the number of task from 1 to 7");
+        int taskNumber = DataChecker.getNubmerValue(i -> i< 1 || i > 7, "Please enter the number of task from 1 to 7");
         // Switch construct
         switch (taskNumber) {
             case 1:
@@ -38,6 +38,7 @@ public class UserInterface {
                 System.out.println("You selected - Add a new folding bike");
                 System.out.println("**********************************************");
                 System.out.println("Ok! Lets add a new folding bike");
+                InputFoldingBikeData.getBikeProperties();
                 break;
             case 3:
                 System.out.println("You selected - Add a new speedelec");
