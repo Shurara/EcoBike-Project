@@ -1,6 +1,7 @@
 package ui;
 
 import data_processing.BikeCatalog;
+import data_processing.SearchFunction;
 
 import java.util.Scanner;
 
@@ -48,6 +49,9 @@ public class UserInterface {
                 break;
             case 5:
                 System.out.println("You selected - Find the first item of a particular brand");
+                System.out.println("**********************************************");
+                System.out.println("Ok! Lets start finding");
+                SearchFunction.getSearchValues();
                 break;
             case 6:
                 System.out.println("You selected - Write to file");
