@@ -46,8 +46,8 @@ public class UserInterface {
                 pressAnyKeyToContinue();
                 System.out.println("Ok! Lets add a new folding bike instance");
                 InputFoldingBikeData.createUsersFoldingBike();
-                InputFoldingBikeData.showCreatedBike();
-                InputFoldingBikeData.addBiketoList();
+                //InputFoldingBikeData.showCreatedBike();
+                //InputFoldingBikeData.addBiketoList();
                 returnToMineMenu();
                 break;
             case 3:
