@@ -44,7 +44,7 @@ public class UserInterface {
                 System.out.println("**********************************************");
                 pressAnyKeyToContinue();
                 BikeCatalog.showCatalog();
-                continueOrExitSelect();
+                returnToMineMenu();
                 break;
             case 2:
                 System.out.println("You selected - Add a new folding bike");
@@ -63,6 +63,10 @@ public class UserInterface {
                 break;
             case 7:
                 System.out.println("You selected - Stop the program");
+                System.out.println("**********************************************");
+                System.out.println("Thank you for using our software! Good luck!");
+                pressAnyKeyToContinue();
+                System.exit(0);
                 break;
         }
 
@@ -76,7 +80,7 @@ public class UserInterface {
         catch(Exception e)
         {}
     }
-    private void continueOrExitSelect(){
+    private void returnToMineMenu(){
         System.out.println("To return to mine menu press any key");
         try
         {
