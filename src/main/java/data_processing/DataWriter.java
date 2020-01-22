@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class DataWriter {
+ public class DataWriter {
 
-    public static List<String> getDataFromFile(Path path) {
+    static List<String> getDataFromFile(Path path) {
 
         List<String> stringList = new ArrayList<>();
         try {

@@ -4,7 +4,7 @@ import factories.BikeFactory;
 import model.Bike;
 
 public class StringToBikeParser {
-    public static Bike parseProperties(String input) {
+    static Bike parseProperties(String input) {
         String bikeType = "";
         String[] properties = new String[6];
 

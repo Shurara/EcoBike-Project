@@ -3,6 +3,7 @@
 import data_processing.DataWriter;
 import data_processing.StringToBikeParser;
 import model.Bike;
+import model.Speedelec;
 import ui.UserInterface;
 
 import java.nio.file.Path;
@@ -12,19 +13,14 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        Path path = Paths.get("src/ecobike.txt");
-        //Path path = Paths.get("src/test.txt");
-        List<Bike> listFromFile = new DataWriter().getDataFromFile(path)
-                .stream()
-                .map(string -> StringToBikeParser.parseProperties(string))
-                .collect(Collectors.toList());
-                //.forEach(System.out::println);
-
-        listFromFile.stream().forEach(System.out::println);
 
 
+        //Bike bike = listFromFile.get(1);
+        //System.out.println(bike.getClass());
 
-        //new UserInterface().createStartMenu();
+        UserInterface userInterface = new UserInterface();
+        userInterface.createStartMenu();
+        userInterface.getUserSelection();
 
 
     }
