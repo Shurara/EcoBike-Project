@@ -80,5 +80,3 @@ public class InputDataChecker {
 }
 
 
-//!(dg == 'C' || dg == 'F')
-
