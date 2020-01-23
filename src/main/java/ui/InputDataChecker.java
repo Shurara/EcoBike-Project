@@ -3,7 +3,7 @@ package ui;
 import java.util.Scanner;
 import java.util.function.Predicate;
 
-public class DataChecker {
+public class InputDataChecker {
 
     public static int getNubmerValue(Predicate<Integer> predicate, String mistakeMessage) {
         Scanner sc = new Scanner(System.in);

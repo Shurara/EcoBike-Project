@@ -8,21 +8,21 @@ public class SearchParamsGetter {
         Map<String, String> requestMap = new HashMap<>();
 
         //FOLDING BIKE
-        String wheelsSizeInch = "size of the wheels (in inch)";
-        String gearsNumber = "number of gears";
+        String wheelsSizeInch = Message.getWheelsSizeInch();
+        String gearsNumber = Message.getGearsNumber();
 
         //ELECTROBIKE
         String maxSpeed = "maximum speed (in km/h)";
         String batteryCapacity = "battery capacity (in mAh)";
 
         //BIKE
-        String brand = "brand";
-        String bikeWeight = "weight of the bike (in grams)";
-        String isFrontAndBackLight = "availability of lights at front and back (TRUE/FALSE)";
-        String color = "color";
-        String price = "price";
+        String brand = Message.getBrand();
+        String bikeWeight = Message.getBikeWeight();
+        String isFrontAndBackLight = Message.getFrontAndBackLight();
+        String color = Message.getColor();
+        String price = Message.getPrice();
 
-        switch (DataChecker.getBykeType()) {
+        switch (InputDataChecker.getBykeType()) {
             case "f":
                 System.out.println("Great! Let's search Folding Bikes)");
                 addFoldingBikeSearсhParams(requestMap, wheelsSizeInch, gearsNumber);
@@ -40,23 +40,25 @@ public class SearchParamsGetter {
     }
 
     private static Map<String, String> addElectroBikeSearchParams(Map<String, String> requestMap, String maxSpeed, String batteryCapacity) {
-        requestMap.put("maxSpeed", DataChecker.getSearchParameters(maxSpeed));
-        requestMap.put("batteryCapacity", DataChecker.getSearchParameters(batteryCapacity));
+        requestMap.put("maxSpeed", InputDataChecker.getSearchParameters(maxSpeed));
+        requestMap.put("batteryCapacity", InputDataChecker.getSearchParameters(batteryCapacity));
         return requestMap;
     }
 
     private static Map<String, String> addBaseSearchParams(Map<String, String> requestMap, String brand, String bikeWeight, String isFrontAndBackLight, String color, String price) {
-        requestMap.put("brand", DataChecker.getSearchParameters(brand));
-        requestMap.put("bikeWeight", DataChecker.getSearchParameters(bikeWeight));
-        requestMap.put("isFrontAndBackLight", DataChecker.getSearchParameters(isFrontAndBackLight));
-        requestMap.put("color", DataChecker.getSearchParameters(color));
-        requestMap.put("price", DataChecker.getSearchParameters(price));
+        requestMap.put("brand", InputDataChecker.getSearchParameters(brand));
+        requestMap.put("bikeWeight", InputDataChecker.getSearchParameters(bikeWeight));
+        requestMap.put("isFrontAndBackLight", InputDataChecker.getSearchParameters(isFrontAndBackLight));
+        requestMap.put("color", InputDataChecker.getSearchParameters(color));
+        requestMap.put("price", InputDataChecker.getSearchParameters(price));
         return requestMap;
     }
 
     private static Map<String, String> addFoldingBikeSearсhParams(Map<String, String> requestMap, String wheelsSizeInch, String gearsNumber) {
-        requestMap.put("wheelsSizeInch", DataChecker.getSearchParameters(wheelsSizeInch));
-        requestMap.put("gearsNumber", DataChecker.getSearchParameters(gearsNumber));
+        requestMap.put("wheelsSizeInch", InputDataChecker.getSearchParameters(wheelsSizeInch));
+        requestMap.put("gearsNumber", InputDataChecker.getSearchParameters(gearsNumber));
         return requestMap;
     }
+
+
 }

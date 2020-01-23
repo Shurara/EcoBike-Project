@@ -1,7 +1,6 @@
 package ui;
 
 import data_processing.BikeCatalog;
-import data_processing.SearchFunction;
 
 public class UserInterface {
     public void createStartMenu() {
@@ -29,13 +28,13 @@ public class UserInterface {
     }
 
     public void getUserSelection() {
-        int taskNumber = DataChecker.getNubmerValue(i -> i< 1 || i > 7, "Please enter the number of task from 1 to 7");
+        int taskNumber = InputDataChecker.getNubmerValue(i -> i< 1 || i > 7, "Please enter the number of task from 1 to 7");
         // Switch construct
         switch (taskNumber) {
             case 1:
                 System.out.println("You selected - Show the entire EcoBike catalog");
                 System.out.println("*********************************************************");
-                pressAnyKeyToContinue();
+                pressEnterToContinue();
                 BikeCatalog.showCatalog();
                 returnToMineMenu();
                 System.out.println("*********************************************************");
@@ -43,9 +42,9 @@ public class UserInterface {
             case 2:
                 System.out.println("You selected - Add a new folding bike");
                 System.out.println("*********************************************************");
-                pressAnyKeyToContinue();
+                pressEnterToContinue();
                 System.out.println("Ok! Lets add a new folding bike instance");
-                InputFoldingBikeData.createUsersFoldingBike();
+                InputBikeData.createUsersFoldingBike();
                 //InputFoldingBikeData.showCreatedBike();
                 //InputFoldingBikeData.addBiketoList();
                 returnToMineMenu();
@@ -74,14 +73,14 @@ public class UserInterface {
                 System.out.println("You selected - Stop the program");
                 System.out.println("*********************************************************");
                 System.out.println("Thank you for using our software! Good luck!");
-                pressAnyKeyToContinue();
+                pressEnterToContinue();
                 System.exit(0);
                 break;
         }
 
     }
 
-    private void pressAnyKeyToContinue() {
+    private void pressEnterToContinue() {
         System.out.println("Press Enter key to continue...");
         try {
             System.in.read();
@@ -92,7 +91,7 @@ public class UserInterface {
     private void returnToMineMenu() {
         System.out.println();
         System.out.println("*********************************************************");
-        System.out.println("To return to Mine menu press enter");
+        System.out.println("To return to Mine menu press Enter");
         try {
             System.in.read();
             createStartMenu();

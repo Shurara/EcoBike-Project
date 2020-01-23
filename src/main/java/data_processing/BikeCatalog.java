@@ -9,13 +9,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class BikeCatalog {
+    private static List<Bike> list;
     private static boolean isChanged;
     static Path path = Paths.get("src/ecobike.txt");
     //Path path = Paths.get("src/test.txt");
 
     public static void showCatalog(){
-        List<Bike> originalList = getListOfBikes();
-        originalList.stream().forEach(System.out::println);
+        list = getListOfBikes();
+        list.stream().forEach(System.out::println);
     }
 
     public static List<Bike> getListOfBikes() {
@@ -31,5 +32,13 @@ public class BikeCatalog {
 
     public static void setChanged(boolean isChanged) {
         BikeCatalog.isChanged = isChanged;
+    }
+
+    public static List<Bike> getList() {
+        return list;
+    }
+
+    public static void setList(List<Bike> list) {
+        BikeCatalog.list = list;
     }
 }
