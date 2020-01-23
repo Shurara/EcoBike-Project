@@ -1,6 +1,7 @@
 package factories;
 
 import model.*;
+import ui.InputBikeData;
 
 public class BikeFactory implements Factory {
 
@@ -17,8 +18,22 @@ public class BikeFactory implements Factory {
                 bike = getEBike(properties, bikeType);
         }
         return bike;
+        
+    }
 
-
+    public Bike getBike(String bikeType) {
+        Bike bike = new Bike();
+        switch (bikeType) {
+            case "FOLDING BIKE":
+                bike = getFoldingBike();
+                break;
+            case "SPEEDELEC":
+                bike = getSpeedelec(bikeType);
+                break;
+            case "E-BIKE":
+                bike = getEBike(bikeType);
+        }
+        return bike;
     }
 
     private ElectroBike getEBike(String[] properties, String bikeType) {
@@ -30,6 +45,18 @@ public class BikeFactory implements Factory {
                 .setBatteryCapacity(Integer.parseInt(properties[4].trim()))
                 .setColor(properties[5].trim())
                 .setPrice(Integer.parseInt(properties[6].trim()))
+                .build(bikeType);
+    }
+
+    private ElectroBike getEBike(String bikeType) {
+        return new EBike.Builder()
+                .setBrand(InputBikeData.getBrand())
+                .setMaxSpeed(InputBikeData.getMaxSpeed())
+                .setBikeWeight(InputBikeData.getBikeWeight())
+                .setFrontAndBackLight(InputBikeData.isFrontAndBackLight())
+                .setBatteryCapacity(InputBikeData.getBatteryCapacity())
+                .setColor(InputBikeData.getColor())
+                .setPrice(InputBikeData.getPrice())
                 .build(bikeType);
     }
 
@@ -45,6 +72,18 @@ public class BikeFactory implements Factory {
                 .build(bikeType);
     }
 
+    private ElectroBike getSpeedelec(String bikeType) {
+        return new Speedelec.Builder()
+                .setBrand(InputBikeData.getBrand())
+                .setMaxSpeed(InputBikeData.getMaxSpeed())
+                .setBikeWeight(InputBikeData.getBikeWeight())
+                .setFrontAndBackLight(InputBikeData.isFrontAndBackLight())
+                .setBatteryCapacity(InputBikeData.getBatteryCapacity())
+                .setColor(InputBikeData.getColor())
+                .setPrice(InputBikeData.getPrice())
+                .build(bikeType);
+    }
+
     private FoldingBike getFoldingBike(String[] properties) {
         return new FoldingBike.Builder()
                 .setBrand(properties[0].trim())
@@ -57,4 +96,15 @@ public class BikeFactory implements Factory {
                 .build();
     }
 
+    private FoldingBike getFoldingBike() {
+        return new FoldingBike.Builder()
+                .setBrand(InputBikeData.getBrand())
+                .setWheelsSizeInch(InputBikeData.getWheelsSizeInch())
+                .setGearsNumber(InputBikeData.getGearsNumber())
+                .setBikeWeight(InputBikeData.getBikeWeight())
+                .setFrontAndBackLight(InputBikeData.isFrontAndBackLight())
+                .setColor(InputBikeData.getColor())
+                .setPrice(InputBikeData.getPrice())
+                .build();
+    }
 }

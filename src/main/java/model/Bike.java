@@ -24,4 +24,13 @@ public class Bike {
         this.color = color;
         this.price = price;
     }
+
+    public String showFullInfo() {
+        return "{" +
+                " brand='" + brand + '\'' +
+                ", bikeWeight=" + bikeWeight +
+                ", isFrontAndBackLight=" + isFrontAndBackLight +
+                ", color='" + color + '\'' +
+                ", price=" + price ;
+    }
 }
