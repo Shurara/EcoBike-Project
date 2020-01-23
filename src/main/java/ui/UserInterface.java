@@ -62,7 +62,7 @@ public class UserInterface {
                 System.out.println("You selected - Find the first item of a particular brand");
                 System.out.println("*********************************************************");
                 System.out.println("Ok! Lets start finding");
-                SearchFunction.getSearchValues();
+                SearchParamsGetter.getSearchValues();
                 returnToMineMenu();
                 break;
             case 6:
@@ -92,7 +92,7 @@ public class UserInterface {
     private void returnToMineMenu() {
         System.out.println();
         System.out.println("*********************************************************");
-        System.out.println("To return to Mine menu press any key");
+        System.out.println("To return to Mine menu press enter");
         try {
             System.in.read();
             createStartMenu();

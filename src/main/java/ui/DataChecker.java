@@ -47,27 +47,38 @@ public class DataChecker {
 
 
     public static String getSearchParameters(String parameter) {
-        System.out.printf("Would you like add the %s to search parameters? \n", parameter);
-        System.out.println("Please enter yes or no");
         String value = "";
-        String answer = getStringValue(str -> "yes".equalsIgnoreCase(str) && "no".equalsIgnoreCase(str), "Don't rush! Only yes or no!");
-        switch (answer) {
-            case "yes": {
+        System.out.printf("Would you like add the %s to search parameters? \n", parameter);
+
+        switch (getYesOrNoAnswer()) {
+            case "y": {
                 System.out.printf("Please input %s parameter \n", parameter);
                 value = getStringValue(str -> str == null || str.trim().isEmpty(), "String must be not empty");
                 break;
             }
-            case "no": {
+            case "n": {
                 System.out.printf("parameter %s skipped \n", parameter);
                 break;
             }
         }
         return value;
     }
+
+    private static String getYesOrNoAnswer() {
+        System.out.println("Please enter  y (yes) or n (no)");
+        return getStringValue(str -> !"y".equalsIgnoreCase(str) && !"n".equalsIgnoreCase(str), "Don't rush! Only y or n!");
+    }
+
+    static String getBykeType() {
+        System.out.println("What type of bike will you look for?");
+        System.out.println("Please press F if it will be Folding Bike");
+        System.out.println("Please press E if it will be E-Bike or Speedelec");
+        System.out.println("");
+        return getStringValue(str -> !"f".equalsIgnoreCase(str) && !"e".equalsIgnoreCase(str), "Don't rush! You can choose only F or E!");
+    }
+
 }
 
 
-
-
-
+//!(dg == 'C' || dg == 'F')
 

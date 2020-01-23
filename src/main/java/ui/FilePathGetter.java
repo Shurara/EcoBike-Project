@@ -15,7 +15,7 @@ public class FilePathGetter {
     }
 
     public String getUserFilePath() {
-        return DataChecker.getStringValue(str -> str == null || str.trim().isEmpty(), "String must be not empty. Input brand");
+        return DataChecker.getStringValue(str -> str == null || str.trim().isEmpty(), "Your input should contain path to your source file");
     }
 
 

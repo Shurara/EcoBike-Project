@@ -25,7 +25,7 @@ public class InputFoldingBikeData {
 
         System.out.println("Please input the availability of lights at front and back (TRUE/FALSE) for Folding Bike..");
         //boolean isFrontAndBackLight = scanner.nextBoolean();
-        boolean isFrontAndBackLight = DataChecker.getBooleanValue(value -> "true".equalsIgnoreCase(value) && "false".equalsIgnoreCase(value), "Value can be only true or false");
+        boolean isFrontAndBackLight = DataChecker.getBooleanValue(value -> !"true".equalsIgnoreCase(value) && !"false".equalsIgnoreCase(value), "Value can be only true or false!");
 
         System.out.println("Please input the color for Folding Bike..");
         String color = DataChecker.getStringValue(str -> str == null || str.trim().isEmpty(), "String must be not empty");
@@ -42,6 +42,7 @@ public class InputFoldingBikeData {
                 .setColor(color)
                 .setPrice(price)
                 .build();
+        System.out.println(createdFoldingBike.showFullInfo());
         return createdFoldingBike;
     }
 
