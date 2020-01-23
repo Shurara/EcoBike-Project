@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class SearchFunction {
     public static Map<String, String> getSearchValues() {
-        Map<String, String> searchParameters = new HashMap<>();
+        Map<String, String> requestMap = new HashMap<>();
         //BIKE
         String brand = "brand";
         String bikeWeight = "weight of the bike (in grams)";
@@ -25,17 +25,17 @@ public class SearchFunction {
         String batteryCapacity = "battery capacity (in mAh)";
 
 
-        searchParameters.put(brand, DataChecker.getSearchParameters(brand));
-        searchParameters.put(wheelsSizeInch, DataChecker.getSearchParameters(wheelsSizeInch));
-        searchParameters.put(gearsNumber, DataChecker.getSearchParameters(gearsNumber));
-        searchParameters.put(bikeWeight, DataChecker.getSearchParameters(bikeWeight));
-        searchParameters.put(isFrontAndBackLight, DataChecker.getSearchParameters(isFrontAndBackLight));
-        searchParameters.put(color, DataChecker.getSearchParameters(color));
-        searchParameters.put(price, DataChecker.getSearchParameters(price));
-        searchParameters.put(maxSpeed, DataChecker.getSearchParameters(maxSpeed));
-        searchParameters.put(batteryCapacity, DataChecker.getSearchParameters(batteryCapacity));
-        System.out.println(searchParameters);
-        return searchParameters;
+        requestMap.put(brand, DataChecker.getSearchParameters(brand));
+        requestMap.put(wheelsSizeInch, DataChecker.getSearchParameters(wheelsSizeInch));
+        requestMap.put(gearsNumber, DataChecker.getSearchParameters(gearsNumber));
+        requestMap.put(bikeWeight, DataChecker.getSearchParameters(bikeWeight));
+        requestMap.put(isFrontAndBackLight, DataChecker.getSearchParameters(isFrontAndBackLight));
+        requestMap.put(color, DataChecker.getSearchParameters(color));
+        requestMap.put(price, DataChecker.getSearchParameters(price));
+        requestMap.put(maxSpeed, DataChecker.getSearchParameters(maxSpeed));
+        requestMap.put(batteryCapacity, DataChecker.getSearchParameters(batteryCapacity));
+        System.out.println(requestMap);
+        return requestMap;
     }
 
 

@@ -47,18 +47,18 @@ public class DataChecker {
 
 
     public static String getSearchParameters(String parameter) {
-        System.out.printf("Would you like add the %s to search parametrs? \n", parameter);
+        System.out.printf("Would you like add the %s to search parameters? \n", parameter);
         System.out.println("Please enter yes or no");
         String value = "";
-        String ansver = getStringValue(str -> "yes".equalsIgnoreCase(str) && "no".equalsIgnoreCase(str), "Don't rush! Only yes or no!");
-        switch (ansver) {
+        String answer = getStringValue(str -> "yes".equalsIgnoreCase(str) && "no".equalsIgnoreCase(str), "Don't rush! Only yes or no!");
+        switch (answer) {
             case "yes": {
-                System.out.printf("Please input %s parametr \n", parameter);
+                System.out.printf("Please input %s parameter \n", parameter);
                 value = getStringValue(str -> str == null || str.trim().isEmpty(), "String must be not empty");
                 break;
             }
             case "no": {
-                System.out.printf("parametr %s skipped \n", parameter);
+                System.out.printf("parameter %s skipped \n", parameter);
                 break;
             }
         }

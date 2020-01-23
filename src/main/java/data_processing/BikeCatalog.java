@@ -20,9 +20,9 @@ public class BikeCatalog {
 
     public static List<Bike> getListOfBikes() {
         return new DataWriter().getDataFromFile(path)
-                    .stream()
-                    .map(string -> StringToBikeParser.parseProperties(string))
-                    .collect(Collectors.toCollection(ArrayList::new));
+                .stream()
+                .map(string -> StringToBikeParser.parseProperties(string))
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
     public static boolean isChanged() {
