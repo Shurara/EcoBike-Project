@@ -21,7 +21,7 @@ public class BikeFactory implements Factory {
 
     }
 
-    public Bike getBike(String bikeType) {
+    public static Bike getBike(String bikeType) {
         Bike bike = new Bike();
         switch (bikeType) {
             case "FOLDING BIKE":
@@ -46,10 +46,11 @@ public class BikeFactory implements Factory {
                 .setColor(properties[5].trim())
                 .setPrice(Integer.parseInt(properties[6].trim()))
                 .build(bikeType);
+
     }
 
-    private ElectroBike getEBike(String bikeType) {
-        return new EBike.Builder()
+    private static ElectroBike getEBike(String bikeType) {
+        ElectroBike eBike = new EBike.Builder()
                 .setBrand(InputBikeData.getBrand())
                 .setMaxSpeed(InputBikeData.getMaxSpeed())
                 .setBikeWeight(InputBikeData.getBikeWeight())
@@ -58,6 +59,8 @@ public class BikeFactory implements Factory {
                 .setColor(InputBikeData.getColor())
                 .setPrice(InputBikeData.getPrice())
                 .build(bikeType);
+        System.out.println(eBike.showFullInfo());
+        return eBike;
     }
 
     private ElectroBike getSpeedelec(String[] properties, String bikeType) {
@@ -72,8 +75,8 @@ public class BikeFactory implements Factory {
                 .build(bikeType);
     }
 
-    private ElectroBike getSpeedelec(String bikeType) {
-        return new Speedelec.Builder()
+    private static ElectroBike getSpeedelec(String bikeType) {
+        ElectroBike eBike = new Speedelec.Builder()
                 .setBrand(InputBikeData.getBrand())
                 .setMaxSpeed(InputBikeData.getMaxSpeed())
                 .setBikeWeight(InputBikeData.getBikeWeight())
@@ -82,6 +85,8 @@ public class BikeFactory implements Factory {
                 .setColor(InputBikeData.getColor())
                 .setPrice(InputBikeData.getPrice())
                 .build(bikeType);
+        System.out.println(eBike.showFullInfo());
+        return eBike;
     }
 
     private FoldingBike getFoldingBike(String[] properties) {
@@ -96,8 +101,8 @@ public class BikeFactory implements Factory {
                 .build();
     }
 
-    private FoldingBike getFoldingBike() {
-        return new FoldingBike.Builder()
+    private static FoldingBike getFoldingBike() {
+        FoldingBike foldingBike = new FoldingBike.Builder()
                 .setBrand(InputBikeData.getBrand())
                 .setWheelsSizeInch(InputBikeData.getWheelsSizeInch())
                 .setGearsNumber(InputBikeData.getGearsNumber())
@@ -106,5 +111,8 @@ public class BikeFactory implements Factory {
                 .setColor(InputBikeData.getColor())
                 .setPrice(InputBikeData.getPrice())
                 .build();
+        System.out.println(foldingBike.showFullInfo());
+        return foldingBike;
+
     }
 }

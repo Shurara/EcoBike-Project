@@ -1,8 +1,8 @@
 package model;
 
 public class ElectroBike extends Bike {
-    public int maxSpeed;
-    public int batteryCapacity;
+    private int maxSpeed;
+    private int batteryCapacity;
 
     public ElectroBike(String brand, int maxSpeed, int bikeWeight, boolean isFrontAndBackLight, int batteryCapacity, String color, int price) {
         super(brand, bikeWeight, isFrontAndBackLight, color, price);
@@ -12,10 +12,18 @@ public class ElectroBike extends Bike {
 
 
     public String toString() {
-        return brand + " with " + batteryCapacity
-                + " mAh battery " + getLightInfo(isFrontAndBackLight)
-                + "\nPrice: " + price + " euros.";
+        return getBrand() + " with " + getBatteryCapacity()
+                + " mAh battery " + getLightInfo(getFrontAndBackLight())
+                + "\nPrice: " + getPrice() + " euros.";
 
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public int getBatteryCapacity() {
+        return batteryCapacity;
     }
 
     public static class Builder {
@@ -70,10 +78,10 @@ public class ElectroBike extends Bike {
 
         public ElectroBike build(String bikeType) {
             ElectroBike electroBike = new Speedelec(brand, maxSpeed, bikeWeight, isFrontAndBackLight, batteryCapacity, color, price);
-            if("SPEEDELEC".equals(bikeType)){
-               return electroBike;
+            if ("SPEEDELEC".equals(bikeType)) {
+                return electroBike;
             }
-            if("E-BIKE".equals(bikeType)){
+            if ("E-BIKE".equals(bikeType)) {
                 electroBike = new EBike(brand, maxSpeed, bikeWeight, isFrontAndBackLight, batteryCapacity, color, price);
             }
             return electroBike;

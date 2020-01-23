@@ -1,8 +1,13 @@
 package ui;
 
-public class Message {
-    //
-    private static final String inputWelcomeMessage = "Please input %s of Folding Bike..";
+public class TextConstants {
+    //TYPES OF BIKES
+    private static final String  FOLDING_BIKE ="FOLDING BIKE";
+    private static final String  SPEEDELEC ="SPEEDELEC";
+    private static final String  E_BIKE ="E-BIKE";
+
+    //MESSAGE
+    private static final String WelcomeMessage = "Please input %s of Bike.. ";
     private static final String notEmptyStringMessage = "String must be not empty";
     private static final String positiveNumberMessage = "Entered number must be > 0";
     private static final String booleanValueMessage = "Value can be only true or false!";
@@ -24,7 +29,7 @@ public class Message {
     private static final String price = "price";
 
     public static String getInputWelcomeMessage() {
-        return inputWelcomeMessage;
+        return WelcomeMessage;
     }
 
     public static String getNotEmptyStringMessage() {
@@ -73,5 +78,25 @@ public class Message {
 
     public static String getPrice() {
         return price;
+    }
+
+    public static String getFoldingBike() {
+        return FOLDING_BIKE;
+    }
+
+    public static String getSpeedelecType() {
+        return SPEEDELEC;
+    }
+
+    public static String getEBikeType() {
+        return E_BIKE;
+    }
+
+    public static String getWelcomeMessage() {
+        return WelcomeMessage;
+    }
+
+    public static String getIsFrontAndBackLight() {
+        return isFrontAndBackLight;
     }
 }

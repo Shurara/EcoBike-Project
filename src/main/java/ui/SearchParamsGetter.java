@@ -8,19 +8,19 @@ public class SearchParamsGetter {
         Map<String, String> requestMap = new HashMap<>();
 
         //FOLDING BIKE
-        String wheelsSizeInch = Message.getWheelsSizeInch();
-        String gearsNumber = Message.getGearsNumber();
+        String wheelsSizeInch = TextConstants.getWheelsSizeInch();
+        String gearsNumber = TextConstants.getGearsNumber();
 
         //ELECTROBIKE
         String maxSpeed = "maximum speed (in km/h)";
         String batteryCapacity = "battery capacity (in mAh)";
 
         //BIKE
-        String brand = Message.getBrand();
-        String bikeWeight = Message.getBikeWeight();
-        String isFrontAndBackLight = Message.getFrontAndBackLight();
-        String color = Message.getColor();
-        String price = Message.getPrice();
+        String brand = TextConstants.getBrand();
+        String bikeWeight = TextConstants.getBikeWeight();
+        String isFrontAndBackLight = TextConstants.getFrontAndBackLight();
+        String color = TextConstants.getColor();
+        String price = TextConstants.getPrice();
 
         switch (InputDataChecker.getBykeType()) {
             case "f":

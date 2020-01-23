@@ -12,11 +12,12 @@ public class FoldingBike extends Bike {
 
     @Override
     public String toString() {
-        return "FOLDING BIKE " + brand + " with " +
-                gearsNumber + " gear(s) " +
-                getLightInfo(isFrontAndBackLight) +
-                "\nPrice: " + price + " euros.";
+        return "FOLDING BIKE " + getBrand() + " with " +
+                getGearsNumber() + " gear(s) " +
+                getLightInfo(getFrontAndBackLight()) +
+                "\nPrice: " + getPrice() + " euros.";
     }
+
 
     @Override
     public String showFullInfo() {

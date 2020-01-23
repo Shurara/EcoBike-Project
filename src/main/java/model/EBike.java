@@ -6,15 +6,16 @@ public class EBike extends ElectroBike {
         super(brand, maxSpeed, bikeWeight, isFrontAndBackLight, batteryCapacity, color, price);
     }
 
-   /* @Override
-    public String toString() {
-        return "E-BIKE " + brand + " with " + batteryCapacity
-                + " mAh battery " + getLightInfo(isFrontAndBackLight)
-                + "\nPrice: " + price + " euros.";
-
-    }*/
-
     public String toString() {
         return  "E-BIKE " + super.toString();
+    }
+
+    @Override
+    public String showFullInfo() {
+
+        return  "E-Bike " + super.showFullInfo() +
+                "maxSpeed=" + getMaxSpeed() +
+                ", batteryCapacity=" + getBatteryCapacity() +
+                "} ";
     }
 }

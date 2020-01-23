@@ -1,8 +1,5 @@
 package ui;
 
-import data_processing.BikeCatalog;
-import model.FoldingBike;
-
 public class InputBikeData {
 
     private static String brand;
@@ -16,46 +13,35 @@ public class InputBikeData {
     private static int batteryCapacity;
 
     static void inputBaseBikeParams() {
-        brand = inputBrand(Message.getInputWelcomeMessage(), Message.getBrand(), Message.getNotEmptyStringMessage());
-        bikeWeight = inputBikeWeight(Message.getInputWelcomeMessage(), Message.getBikeWeight(), Message.getPositiveNumberMessage());
-        isFrontAndBackLight = inputFrontAndBackLight(Message.getInputWelcomeMessage(),Message.getFrontAndBackLight(),Message.getBooleanValueMessage() );
-        color = inputColor(Message.getInputWelcomeMessage(), Message.getColor(), Message.getNotEmptyStringMessage());
-        price = inputPrice(Message.getInputWelcomeMessage(), Message.getPrice(), Message.getPositiveNumberMessage());
+        brand = inputBrand(TextConstants.getInputWelcomeMessage(), TextConstants.getBrand(), TextConstants.getNotEmptyStringMessage());
+        bikeWeight = inputBikeWeight(TextConstants.getInputWelcomeMessage(), TextConstants.getBikeWeight(), TextConstants.getPositiveNumberMessage());
+        isFrontAndBackLight = inputFrontAndBackLight(TextConstants.getInputWelcomeMessage(), TextConstants.getFrontAndBackLight(), TextConstants.getBooleanValueMessage() );
+        color = inputColor(TextConstants.getInputWelcomeMessage(), TextConstants.getColor(), TextConstants.getNotEmptyStringMessage());
+        price = inputPrice(TextConstants.getInputWelcomeMessage(), TextConstants.getPrice(), TextConstants.getPositiveNumberMessage());
     }
 
     static void inputFoldingBikeParams() {
-        wheelsSizeInch = inputWheelsSize(Message.getInputWelcomeMessage(), Message.getWheelsSizeInch(), Message.getPositiveNumberMessage());
-        batteryCapacity = inputBatteryCapacity(Message.getInputWelcomeMessage(), Message.getBatteryCapacity(), Message.getPositiveNumberMessage());
+        wheelsSizeInch = inputWheelsSize(TextConstants.getInputWelcomeMessage(), TextConstants.getWheelsSizeInch(), TextConstants.getPositiveNumberMessage());
+        gearsNumber = inputGearsNumber(TextConstants.getInputWelcomeMessage(), TextConstants.getGearsNumber(), TextConstants.getPositiveNumberMessage());
 
     }
 
     static void inputElectroBikeParams() {
-        maxSpeed = inputMaxSpeed(Message.getInputWelcomeMessage(), Message.getMaxSpeed(), Message.getPositiveNumberMessage());
-        gearsNumber = inputGearsNumber(Message.getInputWelcomeMessage(), Message.getGearsNumber(), Message.getPositiveNumberMessage());
+        maxSpeed = inputMaxSpeed(TextConstants.getInputWelcomeMessage(), TextConstants.getMaxSpeed(), TextConstants.getPositiveNumberMessage());
+
+        batteryCapacity = inputBatteryCapacity(TextConstants.getInputWelcomeMessage(), TextConstants.getBatteryCapacity(), TextConstants.getPositiveNumberMessage());
 
     }
 
-    static void getFullinfo() {
+    static void getFullFoldingBikeInfo() {
         inputBaseBikeParams();
         inputFoldingBikeParams();
     }
 
-   /* public static FoldingBike createUsersFoldingBike() {
-
-        getFullinfo();
-
-        FoldingBike createdBike = new FoldingBike.Builder()
-                .setBrand(brand)
-                .setWheelsSizeInch(wheelsSizeInch)
-                .setGearsNumber(gearsNumber)
-                .setBikeWeight(bikeWeight)
-                .setFrontAndBackLight(isFrontAndBackLight)
-                .setColor(color)
-                .setPrice(price)
-                .build();
-        System.out.println(createdBike.showFullInfo());
-        return createdBike;
-    }*/
+    static void getFullElectroBikeInfo() {
+        inputBaseBikeParams();
+        inputElectroBikeParams();
+    }
 
     private static int inputPrice(String welcomeMessage, String param, String mistakeMessage) {
         System.out.printf(welcomeMessage, param);

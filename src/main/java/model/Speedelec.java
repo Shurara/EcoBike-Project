@@ -11,11 +11,12 @@ public class Speedelec extends ElectroBike {
         return  "SPEEDELEC " + super.toString();
     }
 
-   /* @Override
-    public String toString() {
-        return "SPEEDELEC " + brand + " with " + batteryCapacity
-                + " mAh battery " + getLightInfo(isFrontAndBackLight)
-                + "\nPrice: " + price + " euros.";
+    @Override
+    public String showFullInfo() {
 
-    }*/
+        return  "SPEEDELEC " + super.showFullInfo() +
+                "maxSpeed=" + getMaxSpeed() +
+                ", batteryCapacity=" + getBatteryCapacity() +
+                "} ";
+    }
 }

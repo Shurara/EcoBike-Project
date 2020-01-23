@@ -1,6 +1,7 @@
 package ui;
 
 import data_processing.BikeCatalog;
+import factories.BikeFactory;
 
 public class UserInterface {
     public void createStartMenu() {
@@ -44,17 +45,30 @@ public class UserInterface {
                 System.out.println("*********************************************************");
                 pressEnterToContinue();
                 System.out.println("Ok! Lets add a new folding bike instance");
-                InputBikeData.createUsersFoldingBike();
-                //InputFoldingBikeData.showCreatedBike();
-                //InputFoldingBikeData.addBiketoList();
+                InputBikeData.getFullFoldingBikeInfo();
+                BikeFactory.getBike(TextConstants.getFoldingBike());
+                System.out.println("*********************************************************");
                 returnToMineMenu();
                 break;
             case 3:
                 System.out.println("You selected - Add a new speedelec");
+                System.out.println("*********************************************************");
+                pressEnterToContinue();
+                System.out.println("Ok! Lets add a new speedelec bike instance");
+                InputBikeData.getFullElectroBikeInfo();
+                BikeFactory.getBike(TextConstants.getSpeedelecType());
+                System.out.println("*********************************************************");
+                pressEnterToContinue();
                 returnToMineMenu();
                 break;
             case 4:
                 System.out.println("You selected - Add a new e-bike");
+                System.out.println("*********************************************************");
+                pressEnterToContinue();
+                System.out.println("Ok! Lets add a new e-bike bike instance");
+                InputBikeData.getFullElectroBikeInfo();
+                BikeFactory.getBike(TextConstants.getEBikeType());
+                System.out.println("*********************************************************");
                 returnToMineMenu();
                 break;
             case 5:
@@ -91,7 +105,7 @@ public class UserInterface {
     private void returnToMineMenu() {
         System.out.println();
         System.out.println("*********************************************************");
-        System.out.println("To return to Mine menu press Enter");
+        System.out.println("To return to Main menu press Enter");
         try {
             System.in.read();
             createStartMenu();

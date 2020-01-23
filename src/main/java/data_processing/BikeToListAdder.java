@@ -2,8 +2,6 @@ package data_processing;
 
 import factories.BikeFactory;
 import model.Bike;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class BikeToListAdder {
