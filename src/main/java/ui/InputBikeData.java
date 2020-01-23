@@ -40,7 +40,7 @@ public class InputBikeData {
         inputFoldingBikeParams();
     }
 
-    public static FoldingBike createUsersFoldingBike() {
+   /* public static FoldingBike createUsersFoldingBike() {
 
         getFullinfo();
 
@@ -55,7 +55,7 @@ public class InputBikeData {
                 .build();
         System.out.println(createdBike.showFullInfo());
         return createdBike;
-    }
+    }*/
 
     private static int inputPrice(String welcomeMessage, String param, String mistakeMessage) {
         System.out.printf(welcomeMessage, param);
@@ -100,12 +100,6 @@ public class InputBikeData {
     private static int inputBatteryCapacity(String welcomeMessage, String param, String mistakeMessage) {
         System.out.printf(welcomeMessage, param);
         return InputDataChecker.getNubmerValue(i -> i < 0, mistakeMessage);
-    }
-
-
-    public static void addBiketoList() {
-        BikeCatalog.getListOfBikes().add(createUsersFoldingBike());
-        BikeCatalog.setChanged(true);
     }
 
     public static String getBrand() {

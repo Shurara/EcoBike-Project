@@ -18,7 +18,7 @@ public class BikeFactory implements Factory {
                 bike = getEBike(properties, bikeType);
         }
         return bike;
-        
+
     }
 
     public Bike getBike(String bikeType) {

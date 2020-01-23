@@ -12,6 +12,7 @@ public class BikeCatalog {
     private static List<Bike> list;
     private static boolean isChanged;
     static Path path = Paths.get("src/ecobike.txt");
+
     //Path path = Paths.get("src/test.txt");
 
     public static void showCatalog(){
