@@ -7,15 +7,6 @@ import java.nio.file.Paths;
 public class FilePathGetter {
 
     private static Path path;
-    private static boolean pathPresent;
-
-    public static boolean isPathPresent() {
-        return pathPresent;
-    }
-
-    public static void setPathPresent(boolean pathPresent) {
-        pathPresent = pathPresent;
-    }
 
     public static Path getPath() {
         return path;
@@ -26,26 +17,16 @@ public class FilePathGetter {
     }
 
     public static Path getUserFilePath() {
-        String value = UserInterface.getUserPathVariant();
-        //Path path = Paths.get("src/ecobike.txt");
-        switch (value) {
-            case "b":
-                System.out.println("Вариант с файлом по умолчанию");
-                setPath(path);
-                setPathPresent(true);
-                break;
-            case "n":
-                System.out.println("Вариант с файлом юзера не работает");
-                String input = InputDataChecker.getStringValue(str -> str == null || str.trim().isEmpty(), "Your input should contain path to your source file");
-                if (isValidPath(input)) {
-                    setPath(Paths.get(input));
-                    pathPresent = true;
-                }else{
-                    UserInterface.getUserPathVariant();
-                }
-                break;
-        }
-        return path;
+        System.out.println("========================================================================================");
+        System.out.println("Please specify the path to the file");
+        System.out.println("Original ecobike.txt file has path - \"src/ecobike.txt\" ");
+        System.out.println("if you specify an invalid path, the default file will be uploaded - \"src/ecobike.txt\" ");
+        System.out.println("========================================================================================");
+        System.out.println("");
+        String stringValue = InputDataChecker.getStringValue(str -> !"B".equalsIgnoreCase(str) && !"N".equalsIgnoreCase(str), "Don't rush! You can choose only B or N!");
+        return isValidPath(stringValue) ? Paths.get(stringValue) : Paths.get("src/ecobike.txt");
+
+
     }
 
     public static boolean isValidPath(String path) {

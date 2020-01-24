@@ -32,9 +32,7 @@ public class UserInterface {
     }
 
     static String getUserPathVariant() {
-        System.out.println("==============================================================================");
-        System.out.println("Please specify the path to the file");
-        System.out.println("==============================================================================");
+
         System.out.println("Please press B if you want upload data from basic file - \"src/ecobike.txt\" ");
         System.out.println("Please press N if you want specify path to new data file");
         System.out.println("");

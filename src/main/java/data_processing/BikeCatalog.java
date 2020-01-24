@@ -16,6 +16,10 @@ public class BikeCatalog {
 
     static Path path = Paths.get("src/ecobike.txt");
 
+    public static void initialCatalog(){
+        list = getList();
+    }
+
     public static void showCatalog() {
         list = getList();
         list.stream().forEach(x -> System.out.println(x.showBikeInCatalog()));
@@ -36,7 +40,6 @@ public class BikeCatalog {
         setCatalogChanged(true);
         System.out.println("Bike was added to catalog");
         System.out.println(getList().size());
-        //showCatalog();
     }
 
     public static boolean catalogIsChanged() {
