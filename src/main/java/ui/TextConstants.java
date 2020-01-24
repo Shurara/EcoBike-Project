@@ -1,6 +1,9 @@
 package ui;
 
 public class TextConstants {
+    //PATH
+    private static final String  PATH = "\"src/ecobike.txt\"";
+
     //TYPES OF BIKES
     private static final String  FOLDING_BIKE ="FOLDING BIKE";
     private static final String  SPEEDELEC ="SPEEDELEC";
@@ -8,6 +11,7 @@ public class TextConstants {
 
     //MESSAGE
     private static final String WelcomeMessage = "Please input %s of Bike.. ";
+    private static final String inputPathMessage = "Please set path to data file. For example %s ";
     private static final String notEmptyStringMessage = "String must be not empty";
     private static final String positiveNumberMessage = "Entered number must be > 0";
     private static final String booleanValueMessage = "Value can be only true or false!";
@@ -98,5 +102,20 @@ public class TextConstants {
 
     public static String getIsFrontAndBackLight() {
         return isFrontAndBackLight;
+    }
+
+    public static String getInputPathMessage() {
+        return inputPathMessage;
+    }
+    public static String getPATH() {
+        return PATH;
+    }
+
+    public static String getSPEEDELEC() {
+        return SPEEDELEC;
+    }
+
+    public static String geteBike() {
+        return E_BIKE;
     }
 }

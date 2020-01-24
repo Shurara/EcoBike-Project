@@ -10,18 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
  public class DataWriter {
-
-    /* private static Path path;
-
-     public static Path getPath() {
-         return path;
-     }
-
-     public static void setPath(Path fullPath) {
-       path = fullPath;
-     }*/
-
-     Path path = Paths.get("src/ecobike.txt");
+     //Path path = Paths.get("src/ecobike.txt");
 
      static List<String> getDataFromFile(Path path) {
 

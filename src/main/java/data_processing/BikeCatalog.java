@@ -13,9 +13,6 @@ public class BikeCatalog {
     private static List<Bike> list;
     private static boolean isChanged;
 
-
-    static Path path = Paths.get("src/ecobike.txt");
-
     public static void initialCatalog(){
         list = getList();
     }
@@ -26,7 +23,7 @@ public class BikeCatalog {
     }
 
     public static List<Bike> getListFromFile() {
-        List<Bike>createdList = new DataWriter().getDataFromFile(path)
+        List<Bike>createdList = new DataWriter().getDataFromFile(FilePathGetter.getPath())
                 .stream()
                 .map(string -> StringToBikeParser.parseProperties(string))
                 .collect(Collectors.toCollection(ArrayList::new));

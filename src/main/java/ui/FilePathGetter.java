@@ -16,15 +16,21 @@ public class FilePathGetter {
         path = fullPath;
     }
 
-    public static Path getUserFilePath() {
+    public static void getUserFilePath() {
         System.out.println("========================================================================================");
         System.out.println("Please specify the path to the file");
         System.out.println("Original ecobike.txt file has path - \"src/ecobike.txt\" ");
-        System.out.println("if you specify an invalid path, the default file will be uploaded - \"src/ecobike.txt\" ");
+        System.out.println("If you specify an invalid path, the default file will be uploaded - \"src/ecobike.txt\" ");
         System.out.println("========================================================================================");
         System.out.println("");
-        String stringValue = InputDataChecker.getStringValue(str -> !"B".equalsIgnoreCase(str) && !"N".equalsIgnoreCase(str), "Don't rush! You can choose only B or N!");
-        return isValidPath(stringValue) ? Paths.get(stringValue) : Paths.get("src/ecobike.txt");
+        String stringValue = inputPath(TextConstants.getInputPathMessage(), TextConstants.getPATH(), TextConstants.getNotEmptyStringMessage());
+        if (isValidPath(stringValue)) {
+            setPath(Paths.get(stringValue));
+            System.out.println(stringValue + " loaded");
+        } else {
+            setPath(Paths.get("src/ecobike.txt"));
+            System.out.println(TextConstants.getPATH() + " loaded");
+        }
 
 
     }
@@ -36,6 +42,11 @@ public class FilePathGetter {
             return false;
         }
         return true;
+    }
+
+    private static String inputPath(String welcomeMessage, String param, String mistakeMessage) {
+        System.out.printf(welcomeMessage, param);
+        return InputDataChecker.getStringValue(str -> str == null || str.trim().isEmpty(), mistakeMessage);
     }
 
 
