@@ -3,7 +3,7 @@ package ui;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SearchParamsGetter {
+public class InputSearchParams {
     public static Map<String, String> getSearchValues() {
         Map<String, String> requestMap = new HashMap<>();
 

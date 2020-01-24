@@ -75,7 +75,7 @@ public class UserInterface {
                 System.out.println("You selected - Find the first item of a particular brand");
                 System.out.println("*********************************************************");
                 System.out.println("Ok! Lets start finding");
-                SearchParamsGetter.getSearchValues();
+                InputSearchParams.getSearchValues();
                 returnToMineMenu();
                 break;
             case 6:
