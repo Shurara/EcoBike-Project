@@ -29,7 +29,7 @@ public class UserInterface {
     }
 
     public void getUserSelection() {
-        int taskNumber = InputDataChecker.getNubmerValue(i -> i< 1 || i > 7, "Please enter the number of task from 1 to 7");
+        int taskNumber = InputDataChecker.getNubmerValue(i -> i < 1 || i > 7, "Please enter the number of task from 1 to 7");
         // Switch construct
         switch (taskNumber) {
             case 1:
@@ -45,8 +45,9 @@ public class UserInterface {
                 System.out.println("*********************************************************");
                 pressEnterToContinue();
                 System.out.println("Ok! Lets add a new folding bike instance");
-                InputBikeData.getFullFoldingBikeInfo();
-                BikeFactory.getBike(TextConstants.getFoldingBike());
+                InputBikeData data = new InputBikeData();
+                data.setFullFoldingBikeData();
+                BikeCatalog.addBikeToList(BikeFactory.getBike(TextConstants.getFoldingBike(), data));
                 System.out.println("*********************************************************");
                 returnToMineMenu();
                 break;
@@ -55,8 +56,9 @@ public class UserInterface {
                 System.out.println("*********************************************************");
                 pressEnterToContinue();
                 System.out.println("Ok! Lets add a new speedelec bike instance");
-                InputBikeData.getFullElectroBikeInfo();
-                BikeFactory.getBike(TextConstants.getSpeedelecType());
+                InputBikeData spData = new InputBikeData();
+                spData.setFullElectroBikeData();
+                BikeCatalog.addBikeToList(BikeFactory.getBike(TextConstants.getFoldingBike(), spData));
                 System.out.println("*********************************************************");
                 pressEnterToContinue();
                 returnToMineMenu();
@@ -66,8 +68,9 @@ public class UserInterface {
                 System.out.println("*********************************************************");
                 pressEnterToContinue();
                 System.out.println("Ok! Lets add a new e-bike bike instance");
-                InputBikeData.getFullElectroBikeInfo();
-                BikeFactory.getBike(TextConstants.getEBikeType());
+                InputBikeData eData = new InputBikeData();
+                eData.setFullElectroBikeData();
+                BikeCatalog.addBikeToList(BikeFactory.getBike(TextConstants.getFoldingBike(), eData));
                 System.out.println("*********************************************************");
                 returnToMineMenu();
                 break;

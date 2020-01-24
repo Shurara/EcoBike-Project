@@ -1,6 +1,9 @@
 
 
-import ui.UserInterface;
+import data_processing.BikeCatalog;
+import factories.BikeFactory;
+import ui.InputBikeData;
+import ui.TextConstants;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,12 +12,18 @@ public class Main {
         //Bike bike = listFromFile.get(1);
         //System.out.println(bike.getClass());
 
-        UserInterface userInterface = new UserInterface();
+       /* UserInterface userInterface = new UserInterface();
         userInterface.createStartMenu();
-        userInterface.getUserSelection();
+        userInterface.getUserSelection();*/
 
-       /*int n = DataChecker.getNubmerProperty(i -> i>0);
-        System.out.println(n);*/
+        InputBikeData spData = new InputBikeData();
+        spData.setFullElectroBikeData();
+        System.out.println(spData.getBrand());
+        System.out.println(spData.getColor());
+        System.out.println(spData.getPrice());
+
+        BikeCatalog.addBikeToList(BikeFactory.getBike(TextConstants.getFoldingBike(), spData));
+
 
 
     }

@@ -15,31 +15,36 @@ public class BikeCatalog {
 
     //Path path = Paths.get("src/test.txt");
 
-    public static void showCatalog(){
-        list = getListOfBikes();
-        list.stream().forEach( x ->System.out.println(x.showBikeInCatalog()));
+    public static void showCatalog() {
+        list = getList();
+        list.stream().forEach(x -> System.out.println(x.showBikeInCatalog()));
     }
 
-    public static List<Bike> getListOfBikes() {
+    public static List<Bike> getListFromFile(Path path) {
         return new DataWriter().getDataFromFile(path)
                 .stream()
                 .map(string -> StringToBikeParser.parseProperties(string))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public static boolean isChanged() {
+    public static void addBikeToList(Bike bike) {
+        System.out.println(getList().size());
+        getList().add(bike);
+        setCatalogChanged(true);
+        System.out.println("Bike was added to catalog");
+        System.out.println(getList().size());
+        //showCatalog();
+    }
+
+    public static boolean catalogIsChanged() {
         return isChanged;
     }
 
-    public static void setChanged(boolean isChanged) {
+    public static void setCatalogChanged(boolean isChanged) {
         BikeCatalog.isChanged = isChanged;
     }
 
     public static List<Bike> getList() {
-        return list == null ? getListOfBikes() : list;
-    }
-
-    public static void setList(List<Bike> list) {
-        BikeCatalog.list = list;
+        return list == null ? getListFromFile(path) : list;
     }
 }

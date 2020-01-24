@@ -12,7 +12,7 @@ public class InputBikeData {
     private static int maxSpeed;
     private static int batteryCapacity;
 
-    static void inputBaseBikeParams() {
+    void inputBaseBikeParams() {
         brand = inputBrand(TextConstants.getInputWelcomeMessage(), TextConstants.getBrand(), TextConstants.getNotEmptyStringMessage());
         bikeWeight = inputBikeWeight(TextConstants.getInputWelcomeMessage(), TextConstants.getBikeWeight(), TextConstants.getPositiveNumberMessage());
         isFrontAndBackLight = inputFrontAndBackLight(TextConstants.getInputWelcomeMessage(), TextConstants.getFrontAndBackLight(), TextConstants.getBooleanValueMessage() );
@@ -20,25 +20,25 @@ public class InputBikeData {
         price = inputPrice(TextConstants.getInputWelcomeMessage(), TextConstants.getPrice(), TextConstants.getPositiveNumberMessage());
     }
 
-    static void inputFoldingBikeParams() {
+     void inputFoldingBikeParams() {
         wheelsSizeInch = inputWheelsSize(TextConstants.getInputWelcomeMessage(), TextConstants.getWheelsSizeInch(), TextConstants.getPositiveNumberMessage());
         gearsNumber = inputGearsNumber(TextConstants.getInputWelcomeMessage(), TextConstants.getGearsNumber(), TextConstants.getPositiveNumberMessage());
 
     }
 
-    static void inputElectroBikeParams() {
+    void inputElectroBikeParams() {
         maxSpeed = inputMaxSpeed(TextConstants.getInputWelcomeMessage(), TextConstants.getMaxSpeed(), TextConstants.getPositiveNumberMessage());
 
         batteryCapacity = inputBatteryCapacity(TextConstants.getInputWelcomeMessage(), TextConstants.getBatteryCapacity(), TextConstants.getPositiveNumberMessage());
 
     }
 
-    static void getFullFoldingBikeInfo() {
+    void setFullFoldingBikeData() {
         inputBaseBikeParams();
         inputFoldingBikeParams();
     }
 
-    static void getFullElectroBikeInfo() {
+    public void setFullElectroBikeData() {
         inputBaseBikeParams();
         inputElectroBikeParams();
     }

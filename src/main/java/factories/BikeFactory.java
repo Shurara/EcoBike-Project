@@ -21,17 +21,17 @@ public class BikeFactory implements Factory {
 
     }
 
-    public static Bike getBike(String bikeType) {
+    public static Bike getBike(String bikeType, InputBikeData data) {
         Bike bike = new Bike();
         switch (bikeType) {
             case "FOLDING BIKE":
-                bike = getFoldingBike();
+                bike = getFoldingBike(data);
                 break;
             case "SPEEDELEC":
-                bike = getSpeedelec(bikeType);
+                bike = getSpeedelec(bikeType, data);
                 break;
             case "E-BIKE":
-                bike = getEBike(bikeType);
+                bike = getEBike(bikeType, data);
         }
         return bike;
     }
@@ -49,15 +49,15 @@ public class BikeFactory implements Factory {
 
     }
 
-    private static ElectroBike getEBike(String bikeType) {
+    private static ElectroBike getEBike(String bikeType, InputBikeData data) {
         ElectroBike eBike = new EBike.Builder()
-                .setBrand(InputBikeData.getBrand())
-                .setMaxSpeed(InputBikeData.getMaxSpeed())
-                .setBikeWeight(InputBikeData.getBikeWeight())
-                .setFrontAndBackLight(InputBikeData.isFrontAndBackLight())
-                .setBatteryCapacity(InputBikeData.getBatteryCapacity())
-                .setColor(InputBikeData.getColor())
-                .setPrice(InputBikeData.getPrice())
+                .setBrand(data.getBrand())
+                .setMaxSpeed(data.getMaxSpeed())
+                .setBikeWeight(data.getBikeWeight())
+                .setFrontAndBackLight(data.isFrontAndBackLight())
+                .setBatteryCapacity(data.getBatteryCapacity())
+                .setColor(data.getColor())
+                .setPrice(data.getPrice())
                 .build(bikeType);
         System.out.println(eBike);
         return eBike;
@@ -75,15 +75,15 @@ public class BikeFactory implements Factory {
                 .build(bikeType);
     }
 
-    private static ElectroBike getSpeedelec(String bikeType) {
+    private static ElectroBike getSpeedelec(String bikeType, InputBikeData data) {
         ElectroBike eBike = new Speedelec.Builder()
-                .setBrand(InputBikeData.getBrand())
-                .setMaxSpeed(InputBikeData.getMaxSpeed())
-                .setBikeWeight(InputBikeData.getBikeWeight())
-                .setFrontAndBackLight(InputBikeData.isFrontAndBackLight())
-                .setBatteryCapacity(InputBikeData.getBatteryCapacity())
-                .setColor(InputBikeData.getColor())
-                .setPrice(InputBikeData.getPrice())
+                .setBrand(data.getBrand())
+                .setMaxSpeed(data.getMaxSpeed())
+                .setBikeWeight(data.getBikeWeight())
+                .setFrontAndBackLight(data.isFrontAndBackLight())
+                .setBatteryCapacity(data.getBatteryCapacity())
+                .setColor(data.getColor())
+                .setPrice(data.getPrice())
                 .build(bikeType);
         System.out.println(eBike);
         return eBike;
@@ -101,15 +101,15 @@ public class BikeFactory implements Factory {
                 .build();
     }
 
-    private static FoldingBike getFoldingBike() {
+    private static FoldingBike getFoldingBike(InputBikeData data) {
         FoldingBike foldingBike = new FoldingBike.Builder()
-                .setBrand(InputBikeData.getBrand())
-                .setWheelsSizeInch(InputBikeData.getWheelsSizeInch())
-                .setGearsNumber(InputBikeData.getGearsNumber())
-                .setBikeWeight(InputBikeData.getBikeWeight())
-                .setFrontAndBackLight(InputBikeData.isFrontAndBackLight())
-                .setColor(InputBikeData.getColor())
-                .setPrice(InputBikeData.getPrice())
+                .setBrand(data.getBrand())
+                .setWheelsSizeInch(data.getWheelsSizeInch())
+                .setGearsNumber(data.getGearsNumber())
+                .setBikeWeight(data.getBikeWeight())
+                .setFrontAndBackLight(data.isFrontAndBackLight())
+                .setColor(data.getColor())
+                .setPrice(data.getPrice())
                 .build();
         System.out.println(foldingBike);
         return foldingBike;
