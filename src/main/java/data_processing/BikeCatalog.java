@@ -36,7 +36,7 @@ public class BikeCatalog {
     }
 
     public static List<Bike> getList() {
-        return list;
+        return list == null ? getListOfBikes() : list;
     }
 
     public static void setList(List<Bike> list) {
