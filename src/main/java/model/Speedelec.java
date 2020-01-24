@@ -7,16 +7,13 @@ public class Speedelec extends ElectroBike {
     }
 
     @Override
-    public String toString() {
-        return  "SPEEDELEC " + super.toString();
+    public String showBikeInCatalog() {
+        return  "SPEEDELEC " + super.showBikeInCatalog();
     }
 
     @Override
-    public String showFullInfo() {
+    public String toString() {
+        return  "SPEEDELEC: {" + super.toString() + "} ";
 
-        return  "SPEEDELEC " + super.showFullInfo() +
-                "maxSpeed=" + getMaxSpeed() +
-                ", batteryCapacity=" + getBatteryCapacity() +
-                "} ";
     }
 }

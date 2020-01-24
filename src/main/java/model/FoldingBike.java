@@ -10,8 +10,8 @@ public class FoldingBike extends Bike {
         this.gearsNumber = gearsNumber;
     }
 
-    @Override
-    public String toString() {
+
+    public String showBikeInCatalog() {
         return "FOLDING BIKE " + getBrand() + " with " +
                 getGearsNumber() + " gear(s) " +
                 getLightInfo(getFrontAndBackLight()) +
@@ -19,11 +19,10 @@ public class FoldingBike extends Bike {
     }
 
 
-    @Override
-    public String showFullInfo() {
-        return "Folding Bike " + super.showFullInfo() +
-                "wheelsSizeInch=" + wheelsSizeInch +
-                ", gearsNumber=" + gearsNumber +
+    public String  toString() {
+        return "Folding Bike: {" + super.toString() +
+                ", wheelsSizeInch = " + wheelsSizeInch +
+                ", gearsNumber = " + gearsNumber +
                 "} ";
     }
 

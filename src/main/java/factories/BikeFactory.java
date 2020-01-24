@@ -59,7 +59,7 @@ public class BikeFactory implements Factory {
                 .setColor(InputBikeData.getColor())
                 .setPrice(InputBikeData.getPrice())
                 .build(bikeType);
-        System.out.println(eBike.showFullInfo());
+        System.out.println(eBike);
         return eBike;
     }
 
@@ -85,7 +85,7 @@ public class BikeFactory implements Factory {
                 .setColor(InputBikeData.getColor())
                 .setPrice(InputBikeData.getPrice())
                 .build(bikeType);
-        System.out.println(eBike.showFullInfo());
+        System.out.println(eBike);
         return eBike;
     }
 
@@ -111,7 +111,7 @@ public class BikeFactory implements Factory {
                 .setColor(InputBikeData.getColor())
                 .setPrice(InputBikeData.getPrice())
                 .build();
-        System.out.println(foldingBike.showFullInfo());
+        System.out.println(foldingBike);
         return foldingBike;
 
     }

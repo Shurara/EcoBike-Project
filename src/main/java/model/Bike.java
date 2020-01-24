@@ -4,12 +4,12 @@ public class Bike {
 
     //public String bikeType;
     private String brand;
-    private   int bikeWeight;
+    private int bikeWeight;
     private boolean isFrontAndBackLight;
     private String color;
     private int price;
 
-    public String getLightInfo(boolean isFrontAndBackLight){
+    public String getLightInfo(boolean isFrontAndBackLight) {
         String result = isFrontAndBackLight ? "and head/tail light." : "and no head/tail light.";
         return result;
     }
@@ -25,13 +25,18 @@ public class Bike {
         this.price = price;
     }
 
-    public String showFullInfo() {
-        return "{" +
-                " brand='" + getBrand() + '\'' +
-                ", bikeWeight=" + getBikeWeight() +
-                ", isFrontAndBackLight=" + getFrontAndBackLight() +
-                ", color='" + getColor() + '\'' +
-                ", price=" + getPrice();
+    @Override
+    public String toString() {
+        return
+                "brand = '" + brand + '\'' +
+                        ", bikeWeight = " + bikeWeight +
+                        ", isFrontAndBackLight = " + isFrontAndBackLight +
+                        ", color =' " + color + '\'' +
+                        ", price = " + price;
+    }
+
+    public String showBikeInCatalog() {
+        return "";
     }
 
     public String getBrand() {

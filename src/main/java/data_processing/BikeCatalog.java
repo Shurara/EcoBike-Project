@@ -17,7 +17,7 @@ public class BikeCatalog {
 
     public static void showCatalog(){
         list = getListOfBikes();
-        list.stream().forEach(System.out::println);
+        list.stream().forEach( x ->System.out.println(x.showBikeInCatalog()));
     }
 
     public static List<Bike> getListOfBikes() {

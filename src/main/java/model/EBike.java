@@ -6,16 +6,12 @@ public class EBike extends ElectroBike {
         super(brand, maxSpeed, bikeWeight, isFrontAndBackLight, batteryCapacity, color, price);
     }
 
-    public String toString() {
-        return  "E-BIKE " + super.toString();
+    public String showBikeInCatalog() {
+        return  "E-BIKE " + super.showBikeInCatalog();
     }
 
     @Override
-    public String showFullInfo() {
-
-        return  "E-Bike " + super.showFullInfo() +
-                "maxSpeed=" + getMaxSpeed() +
-                ", batteryCapacity=" + getBatteryCapacity() +
-                "} ";
+    public String toString() {
+        return  "E-Bike: {" + super.toString() + "} ";
     }
 }

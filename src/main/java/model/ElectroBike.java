@@ -10,8 +10,15 @@ public class ElectroBike extends Bike {
         this.batteryCapacity = batteryCapacity;
     }
 
-
+    @Override
     public String toString() {
+        return
+                super.toString() +
+                        " , maxSpeed = " + maxSpeed +
+                        ", batteryCapacity = " + batteryCapacity;
+    }
+
+    public String showBikeInCatalog() {
         return getBrand() + " with " + getBatteryCapacity()
                 + " mAh battery " + getLightInfo(getFrontAndBackLight())
                 + "\nPrice: " + getPrice() + " euros.";
