@@ -1,6 +1,7 @@
 package data_processing;
 
 import model.Bike;
+import ui.FilePathGetter;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -11,20 +12,22 @@ import java.util.stream.Collectors;
 public class BikeCatalog {
     private static List<Bike> list;
     private static boolean isChanged;
-    static Path path = Paths.get("src/ecobike.txt");
 
-    //Path path = Paths.get("src/test.txt");
+
+    static Path path = Paths.get("src/ecobike.txt");
 
     public static void showCatalog() {
         list = getList();
         list.stream().forEach(x -> System.out.println(x.showBikeInCatalog()));
     }
 
-    public static List<Bike> getListFromFile(Path path) {
-        return new DataWriter().getDataFromFile(path)
+    public static List<Bike> getListFromFile() {
+        List<Bike>createdList = new DataWriter().getDataFromFile(path)
                 .stream()
                 .map(string -> StringToBikeParser.parseProperties(string))
                 .collect(Collectors.toCollection(ArrayList::new));
+        FileChangeChecker.setStartValue(createdList);
+        return createdList;
     }
 
     public static void addBikeToList(Bike bike) {
@@ -45,6 +48,6 @@ public class BikeCatalog {
     }
 
     public static List<Bike> getList() {
-        return list == null ? getListFromFile(path) : list;
+        return list == null ? getListFromFile() : list;
     }
 }

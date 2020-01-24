@@ -4,13 +4,26 @@ package data_processing;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
  public class DataWriter {
 
-    static List<String> getDataFromFile(Path path) {
+    /* private static Path path;
+
+     public static Path getPath() {
+         return path;
+     }
+
+     public static void setPath(Path fullPath) {
+       path = fullPath;
+     }*/
+
+     Path path = Paths.get("src/ecobike.txt");
+
+     static List<String> getDataFromFile(Path path) {
 
         List<String> stringList = new ArrayList<>();
         try {

@@ -1,7 +1,10 @@
 package ui;
 
 import data_processing.BikeCatalog;
+import data_processing.BikeToFileSaver;
+import data_processing.FileChangeChecker;
 import factories.BikeFactory;
+import org.w3c.dom.ls.LSOutput;
 
 public class UserInterface {
     public void createStartMenu() {
@@ -27,6 +30,17 @@ public class UserInterface {
 
         getUserSelection();
     }
+
+    static String getUserPathVariant() {
+        System.out.println("==============================================================================");
+        System.out.println("Please specify the path to the file");
+        System.out.println("==============================================================================");
+        System.out.println("Please press B if you want upload data from basic file - \"src/ecobike.txt\" ");
+        System.out.println("Please press N if you want specify path to new data file");
+        System.out.println("");
+        return InputDataChecker.getStringValue(str -> !"B".equalsIgnoreCase(str) && !"N".equalsIgnoreCase(str), "Don't rush! You can choose only B or N!");
+    }
+
 
     public void getUserSelection() {
         int taskNumber = InputDataChecker.getNubmerValue(i -> i < 1 || i > 7, "Please enter the number of task from 1 to 7");
@@ -83,6 +97,16 @@ public class UserInterface {
                 break;
             case 6:
                 System.out.println("You selected - Write to file");
+                System.out.println("*********************************************************");
+                if (FileChangeChecker.changeCheck()) {
+                    BikeToFileSaver.save(BikeCatalog.getList(), FilePathGetter.getPath());
+                } else {
+                    System.out.println("Your data has not changed");
+                    pressEnterToContinue();
+                    returnToMineMenu();
+
+
+                }
                 returnToMineMenu();
                 break;
 

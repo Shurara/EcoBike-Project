@@ -77,6 +77,10 @@ public class InputDataChecker {
         return getStringValue(str -> !"f".equalsIgnoreCase(str) && !"e".equalsIgnoreCase(str), "Don't rush! You can choose only F or E!");
     }
 
+
+
+
+
 }
 
 

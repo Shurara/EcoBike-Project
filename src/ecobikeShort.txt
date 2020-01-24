@@ -1,0 +1,7 @@
+SPEEDELEC Peugeot; 50; 20800; true; 15700; silver; 1279
+SPEEDELEC Peugeot; 50; 20800; true; 15700; silver; 1279
+SPEEDELEC Peugeot; 50; 20800; true; 15700; silver; 1279
+SPEEDELEC Peugeot; 50; 20800; true; 15700; silver; 1279
+SPEEDELEC Peugeot; 50; 20800; true; 15700; silver; 1279
+SPEEDELEC Peugeot; 50; 20800; true; 15700; silver; 1279
+SPEEDELEC Peugeot; 50; 20800; true; 15700; silver; 1279
