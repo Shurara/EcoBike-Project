@@ -12,10 +12,9 @@ public class ElectroBike extends Bike {
 
     @Override
     public String toString() {
-        return
-                super.toString() +
-                        " , maxSpeed = " + maxSpeed +
-                        ", batteryCapacity = " + batteryCapacity;
+        return super.toString() +
+                " , maxSpeed = " + maxSpeed +
+                ", batteryCapacity = " + batteryCapacity;
     }
 
     public String showBikeInCatalog() {
@@ -23,6 +22,17 @@ public class ElectroBike extends Bike {
                 + " mAh battery " + getLightInfo(getFrontAndBackLight())
                 + "\nPrice: " + getPrice() + " euros.";
 
+    }
+
+    @Override
+    public String convertBikeToWrite() {
+        return super.convertBikeToWrite() + ";" +
+                getMaxSpeed() + ";" +
+                getBikeWeight() + ";" +
+                getFrontAndBackLight() + ";" +
+                getBatteryCapacity() + ";" +
+                getColor() + ";" +
+                getPrice();
     }
 
     public int getMaxSpeed() {

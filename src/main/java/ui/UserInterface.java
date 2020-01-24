@@ -58,7 +58,7 @@ public class UserInterface {
                 System.out.println("Ok! Lets add a new speedelec bike instance");
                 InputBikeData spData = new InputBikeData();
                 spData.setFullElectroBikeData();
-                BikeCatalog.addBikeToList(BikeFactory.getBike(TextConstants.getFoldingBike(), spData));
+                BikeCatalog.addBikeToList(BikeFactory.getBike(TextConstants.getSpeedelecType(), spData));
                 System.out.println("*********************************************************");
                 pressEnterToContinue();
                 returnToMineMenu();
@@ -70,7 +70,7 @@ public class UserInterface {
                 System.out.println("Ok! Lets add a new e-bike bike instance");
                 InputBikeData eData = new InputBikeData();
                 eData.setFullElectroBikeData();
-                BikeCatalog.addBikeToList(BikeFactory.getBike(TextConstants.getFoldingBike(), eData));
+                BikeCatalog.addBikeToList(BikeFactory.getBike(TextConstants.getEBikeType(), eData));
                 System.out.println("*********************************************************");
                 returnToMineMenu();
                 break;

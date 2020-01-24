@@ -16,6 +16,7 @@ public class BikeFactory implements Factory {
                 break;
             case "E-BIKE":
                 bike = getEBike(properties, bikeType);
+                break;
         }
         return bike;
 
@@ -32,6 +33,7 @@ public class BikeFactory implements Factory {
                 break;
             case "E-BIKE":
                 bike = getEBike(bikeType, data);
+                break;
         }
         return bike;
     }

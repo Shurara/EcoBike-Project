@@ -16,4 +16,9 @@ public class Speedelec extends ElectroBike {
         return  "SPEEDELEC: {" + super.toString() + "} ";
 
     }
+
+    @Override
+    public String convertBikeToWrite() {
+        return "SPEEDELEC " + super.convertBikeToWrite();
+    }
 }

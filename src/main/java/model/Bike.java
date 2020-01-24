@@ -28,11 +28,15 @@ public class Bike {
     @Override
     public String toString() {
         return
-                "brand = '" + brand + '\'' +
-                        ", bikeWeight = " + bikeWeight +
-                        ", isFrontAndBackLight = " + isFrontAndBackLight +
-                        ", color =' " + color + '\'' +
-                        ", price = " + price;
+                "brand = '" + getBrand() + '\'' +
+                        ", bikeWeight = " + getBikeWeight() +
+                        ", isFrontAndBackLight = " + getFrontAndBackLight() +
+                        ", color =' " + getColor() + '\'' +
+                        ", price = " + getPrice();
+    }
+
+    public String convertBikeToWrite() {
+        return getBrand();
     }
 
     public String showBikeInCatalog() {
@@ -58,4 +62,6 @@ public class Bike {
     public int getPrice() {
         return price;
     }
+
+
 }

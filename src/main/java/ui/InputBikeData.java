@@ -33,7 +33,7 @@ public class InputBikeData {
 
     }
 
-    void setFullFoldingBikeData() {
+    public void setFullFoldingBikeData() {
         inputBaseBikeParams();
         inputFoldingBikeParams();
     }

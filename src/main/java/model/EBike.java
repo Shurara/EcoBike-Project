@@ -7,11 +7,16 @@ public class EBike extends ElectroBike {
     }
 
     public String showBikeInCatalog() {
-        return  "E-BIKE " + super.showBikeInCatalog();
+        return "E-BIKE " + super.showBikeInCatalog();
     }
 
     @Override
     public String toString() {
-        return  "E-Bike: {" + super.toString() + "} ";
+        return "E-Bike: {" + super.toString() + "} ";
+    }
+
+    @Override
+    public String convertBikeToWrite() {
+        return "E-BIKE " + super.convertBikeToWrite();
     }
 }
