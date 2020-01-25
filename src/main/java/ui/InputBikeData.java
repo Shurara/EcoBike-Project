@@ -15,12 +15,12 @@ public class InputBikeData {
     void inputBaseBikeParams() {
         brand = inputBrand(TextConstants.getInputWelcomeMessage(), TextConstants.getBrand(), TextConstants.getNotEmptyStringMessage());
         bikeWeight = inputBikeWeight(TextConstants.getInputWelcomeMessage(), TextConstants.getBikeWeight(), TextConstants.getPositiveNumberMessage());
-        isFrontAndBackLight = inputFrontAndBackLight(TextConstants.getInputWelcomeMessage(), TextConstants.getFrontAndBackLight(), TextConstants.getBooleanValueMessage() );
+        isFrontAndBackLight = inputFrontAndBackLight(TextConstants.getInputWelcomeMessage(), TextConstants.getFrontAndBackLight(), TextConstants.getBooleanValueMessage());
         color = inputColor(TextConstants.getInputWelcomeMessage(), TextConstants.getColor(), TextConstants.getNotEmptyStringMessage());
         price = inputPrice(TextConstants.getInputWelcomeMessage(), TextConstants.getPrice(), TextConstants.getPositiveNumberMessage());
     }
 
-     void inputFoldingBikeParams() {
+    void inputFoldingBikeParams() {
         wheelsSizeInch = inputWheelsSize(TextConstants.getInputWelcomeMessage(), TextConstants.getWheelsSizeInch(), TextConstants.getPositiveNumberMessage());
         gearsNumber = inputGearsNumber(TextConstants.getInputWelcomeMessage(), TextConstants.getGearsNumber(), TextConstants.getPositiveNumberMessage());
 
@@ -28,9 +28,7 @@ public class InputBikeData {
 
     void inputElectroBikeParams() {
         maxSpeed = inputMaxSpeed(TextConstants.getInputWelcomeMessage(), TextConstants.getMaxSpeed(), TextConstants.getPositiveNumberMessage());
-
         batteryCapacity = inputBatteryCapacity(TextConstants.getInputWelcomeMessage(), TextConstants.getBatteryCapacity(), TextConstants.getPositiveNumberMessage());
-
     }
 
     public void setFullFoldingBikeData() {

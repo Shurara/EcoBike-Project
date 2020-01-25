@@ -9,10 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
- public class DataWriter {
-     //Path path = Paths.get("src/ecobike.txt");
+public class DataWriter {
 
-     static List<String> getDataFromFile(Path path) {
+    static List<String> getDataFromFile(Path path) {
 
         List<String> stringList = new ArrayList<>();
         try {
@@ -22,6 +21,5 @@ import java.util.stream.Collectors;
         }
         return stringList;
     }
-
 
 }

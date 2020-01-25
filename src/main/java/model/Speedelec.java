@@ -8,17 +8,27 @@ public class Speedelec extends ElectroBike {
 
     @Override
     public String showBikeInCatalog() {
-        return  "SPEEDELEC " + super.showBikeInCatalog();
+        return "SPEEDELEC " + super.showBikeInCatalog();
     }
 
     @Override
     public String toString() {
-        return  "SPEEDELEC: {" + super.toString() + "} ";
+        return "SPEEDELEC: {" + super.toString() + "} ";
 
     }
 
     @Override
     public String convertBikeToSring() {
         return "SPEEDELEC " + super.convertBikeToSring();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }

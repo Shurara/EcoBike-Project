@@ -1,6 +1,6 @@
 package data_processing;
 
-//TODO:enums with all predefined fields
+
 public enum Fields {
     BRAND("brand"),
     BIKEWEIGHT("bikeWeight"),

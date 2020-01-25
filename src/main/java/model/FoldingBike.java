@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class FoldingBike extends Bike {
     private int wheelsSizeInch;
     private int gearsNumber;
@@ -99,5 +101,18 @@ public class FoldingBike extends Bike {
 
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        FoldingBike that = (FoldingBike) o;
+        return wheelsSizeInch == that.wheelsSizeInch &&
+                gearsNumber == that.gearsNumber;
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), wheelsSizeInch, gearsNumber);
+    }
 }

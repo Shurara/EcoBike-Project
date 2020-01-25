@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class ElectroBike extends Bike {
     private int maxSpeed;
     private int batteryCapacity;
@@ -44,7 +46,6 @@ public class ElectroBike extends Bike {
     }
 
     public static class Builder {
-        public String bikeType;
         private String brand;
         private int maxSpeed;
         private int bikeWeight;
@@ -105,5 +106,23 @@ public class ElectroBike extends Bike {
 
         }
 
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Builder builder = (Builder) o;
+            return maxSpeed == builder.maxSpeed &&
+                    bikeWeight == builder.bikeWeight &&
+                    isFrontAndBackLight == builder.isFrontAndBackLight &&
+                    batteryCapacity == builder.batteryCapacity &&
+                    price == builder.price &&
+                    Objects.equals(brand, builder.brand) &&
+                    Objects.equals(color, builder.color);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(brand, maxSpeed, bikeWeight, isFrontAndBackLight, batteryCapacity, color, price);
+        }
     }
 }

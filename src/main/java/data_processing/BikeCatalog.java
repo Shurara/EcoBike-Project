@@ -1,21 +1,17 @@
 package data_processing;
 
 import model.Bike;
-import model.Product;
 import ui.FilePathGetter;
-import ui.UserInterface;
-
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class BikeCatalog {
     private static List<Bike> list;
     private static boolean isChanged;
 
-    public static void initialCatalog(){
+    public static void initialCatalog() {
         list = getList();
     }
 
@@ -25,7 +21,7 @@ public class BikeCatalog {
     }
 
     public static List<Bike> getListFromFile() {
-        List<Bike>createdList = new DataWriter().getDataFromFile(FilePathGetter.getPath())
+        List<Bike> createdList = new DataWriter().getDataFromFile(FilePathGetter.getPath())
                 .stream()
                 .map(string -> StringToBikeParser.parseProperties(string))
                 .collect(Collectors.toCollection(ArrayList::new));
@@ -48,5 +44,6 @@ public class BikeCatalog {
     public static List<Bike> getList() {
         return list == null ? getListFromFile() : list;
     }
+
 
 }

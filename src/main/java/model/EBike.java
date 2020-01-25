@@ -19,4 +19,14 @@ public class EBike extends ElectroBike {
     public String convertBikeToSring() {
         return "E-BIKE " + super.convertBikeToSring();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }

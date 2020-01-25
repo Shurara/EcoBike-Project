@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import data_processing.Search;
 
 public class InputSearchParams {
     private Map<String, String> requestParameters = new LinkedHashMap<>();
@@ -35,7 +34,7 @@ public class InputSearchParams {
 
     }
 
-    public void showSelectedParams(){
+    public void showSelectedParams() {
         System.out.println("You selected  parameter for seaarch: " + requestParameters);
     }
 

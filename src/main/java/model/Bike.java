@@ -1,8 +1,9 @@
 package model;
 
+import java.util.Objects;
+
 public class Bike {
 
-    //public String bikeType;
     private String brand;
     private int bikeWeight;
     private boolean isFrontAndBackLight;
@@ -63,5 +64,20 @@ public class Bike {
         return price;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Bike bike = (Bike) o;
+        return bikeWeight == bike.bikeWeight &&
+                isFrontAndBackLight == bike.isFrontAndBackLight &&
+                price == bike.price &&
+                Objects.equals(brand, bike.brand) &&
+                Objects.equals(color, bike.color);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, bikeWeight, isFrontAndBackLight, color, price);
+    }
 }

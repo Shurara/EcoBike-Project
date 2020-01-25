@@ -14,6 +14,7 @@ public class Search {
     public static void initialProductList() {
         productList = getProduct();
     }
+
     public static List<Product> getProduct() {
         return new DataWriter().getDataFromFile(FilePathGetter.getPath())
                 .stream()
@@ -22,7 +23,7 @@ public class Search {
     }
 
     public static List<Product> getProductFromList() {
-        return  BikeCatalog.getList()
+        return BikeCatalog.getList()
                 .stream()
                 .map(bike -> bike.convertBikeToSring())
                 .map(string -> ParseStringToProduct.parseProperties(string))
@@ -34,7 +35,7 @@ public class Search {
                 .filter(item -> filterByFeatures(searchValue, item.getFeatures()))
                 .collect(Collectors.toList());
 
-        collect.forEach(x ->System.out.println("According to your search parameters found" + x));
+        collect.forEach(x -> System.out.println("According to your search parameters found" + x));
 
 
     }
@@ -45,9 +46,5 @@ public class Search {
                 .filter(param -> !param.getValue().isEmpty())
                 .allMatch(param -> param.getValue().equalsIgnoreCase(features.get(param.getKey())));
     }
-
-
-
-
 
 }

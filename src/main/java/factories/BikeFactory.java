@@ -61,7 +61,7 @@ public class BikeFactory implements Factory {
                 .setColor(data.getColor())
                 .setPrice(data.getPrice())
                 .build(bikeType);
-        System.out.println( "There is a new instance of " + eBike);
+        System.out.println("There is a new instance of " + eBike);
         return eBike;
     }
 
@@ -87,7 +87,7 @@ public class BikeFactory implements Factory {
                 .setColor(data.getColor())
                 .setPrice(data.getPrice())
                 .build(bikeType);
-        System.out.println( "There is a new instance of " + eBike);
+        System.out.println("There is a new instance of " + eBike);
         return eBike;
     }
 
@@ -113,7 +113,7 @@ public class BikeFactory implements Factory {
                 .setColor(data.getColor())
                 .setPrice(data.getPrice())
                 .build();
-        System.out.println( "There is a new instance of " + foldingBike);
+        System.out.println("There is a new instance of " + foldingBike);
         return foldingBike;
 
     }

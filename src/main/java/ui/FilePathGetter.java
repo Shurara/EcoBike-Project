@@ -27,7 +27,7 @@ public class FilePathGetter {
         System.out.println("");
         String inputPath = inputPath(TextConstants.getInputPathMessage(), TextConstants.getPATH(), TextConstants.getNotEmptyStringMessage());
         Path path = new File(inputPath).toPath();
-        if ( Files.exists(path)) {
+        if (Files.exists(path)) {
             setPath(Paths.get(inputPath));
             System.out.println(inputPath + " loaded");
         } else {
