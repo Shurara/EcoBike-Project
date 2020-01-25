@@ -23,12 +23,14 @@ public class Product {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Product product = (Product) o;
-        return Objects.equals(features, product.features);
+
+        return features != null ? features.equals(product.features) : product.features == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(features);
+        return features != null ? features.hashCode() : 0;
     }
 }

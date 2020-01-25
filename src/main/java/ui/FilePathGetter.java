@@ -41,5 +41,13 @@ public class FilePathGetter {
         return InputDataChecker.getStringValue(str -> str == null || str.trim().isEmpty(), mistakeMessage);
     }
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }

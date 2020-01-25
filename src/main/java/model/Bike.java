@@ -68,16 +68,23 @@ public class Bike {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Bike bike = (Bike) o;
-        return bikeWeight == bike.bikeWeight &&
-                isFrontAndBackLight == bike.isFrontAndBackLight &&
-                price == bike.price &&
-                Objects.equals(brand, bike.brand) &&
-                Objects.equals(color, bike.color);
+
+        if (bikeWeight != bike.bikeWeight) return false;
+        if (isFrontAndBackLight != bike.isFrontAndBackLight) return false;
+        if (price != bike.price) return false;
+        if (brand != null ? !brand.equals(bike.brand) : bike.brand != null) return false;
+        return color != null ? color.equals(bike.color) : bike.color == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(brand, bikeWeight, isFrontAndBackLight, color, price);
+        int result = brand != null ? brand.hashCode() : 0;
+        result = 31 * result + bikeWeight;
+        result = 31 * result + (isFrontAndBackLight ? 1 : 0);
+        result = 31 * result + (color != null ? color.hashCode() : 0);
+        result = 31 * result + price;
+        return result;
     }
 }

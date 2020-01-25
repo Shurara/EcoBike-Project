@@ -40,7 +40,6 @@ public class Search {
             collect.forEach(x -> System.out.println("According to your search parameters found: " + x));
         }
 
-
     }
 
     private static boolean filterByFeatures(Map<String, String> filter, Map<String, String> features) {
@@ -50,4 +49,13 @@ public class Search {
                 .allMatch(param -> param.getValue().equalsIgnoreCase(features.get(param.getKey())));
     }
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }

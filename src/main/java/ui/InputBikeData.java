@@ -121,4 +121,14 @@ public class InputBikeData {
     public static int getBatteryCapacity() {
         return batteryCapacity;
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }

@@ -35,7 +35,7 @@ public class InputSearchParams {
     }
 
     public void showSelectedParams() {
-        System.out.println("You selected  parameter for seaarch: " + requestParameters);
+        System.out.println(TextConstants.getSelectedValueMessage() + requestParameters);
     }
 
     private static void inputParameters(Map<String, String> requestParameters, String wheelsSizeInch, String gearsNumber, String maxSpeed, String batteryCapacity) {
@@ -111,5 +111,18 @@ public class InputSearchParams {
         }
     }*/
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        InputSearchParams that = (InputSearchParams) o;
+
+        return requestParameters != null ? requestParameters.equals(that.requestParameters) : that.requestParameters == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return requestParameters != null ? requestParameters.hashCode() : 0;
+    }
 }

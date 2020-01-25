@@ -106,13 +106,18 @@ public class FoldingBike extends Bike {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
+
         FoldingBike that = (FoldingBike) o;
-        return wheelsSizeInch == that.wheelsSizeInch &&
-                gearsNumber == that.gearsNumber;
+
+        if (wheelsSizeInch != that.wheelsSizeInch) return false;
+        return gearsNumber == that.gearsNumber;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), wheelsSizeInch, gearsNumber);
+        int result = super.hashCode();
+        result = 31 * result + wheelsSizeInch;
+        result = 31 * result + gearsNumber;
+        return result;
     }
 }

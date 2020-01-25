@@ -45,5 +45,13 @@ public class BikeCatalog {
         return list == null ? getListFromFile() : list;
     }
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }

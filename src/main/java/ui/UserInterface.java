@@ -41,7 +41,6 @@ public class UserInterface {
 
     public void getUserSelection() {
         int taskNumber = InputDataChecker.getNubmerValue(i -> i < 1 || i > 7, "Please enter the number of task from 1 to 7");
-        // Switch construct
         switch (taskNumber) {
             case 1:
                 System.out.println("You selected - Show the entire EcoBike catalog");

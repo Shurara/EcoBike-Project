@@ -110,19 +110,28 @@ public class ElectroBike extends Bike {
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
+
             Builder builder = (Builder) o;
-            return maxSpeed == builder.maxSpeed &&
-                    bikeWeight == builder.bikeWeight &&
-                    isFrontAndBackLight == builder.isFrontAndBackLight &&
-                    batteryCapacity == builder.batteryCapacity &&
-                    price == builder.price &&
-                    Objects.equals(brand, builder.brand) &&
-                    Objects.equals(color, builder.color);
+
+            if (maxSpeed != builder.maxSpeed) return false;
+            if (bikeWeight != builder.bikeWeight) return false;
+            if (isFrontAndBackLight != builder.isFrontAndBackLight) return false;
+            if (batteryCapacity != builder.batteryCapacity) return false;
+            if (price != builder.price) return false;
+            if (brand != null ? !brand.equals(builder.brand) : builder.brand != null) return false;
+            return color != null ? color.equals(builder.color) : builder.color == null;
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(brand, maxSpeed, bikeWeight, isFrontAndBackLight, batteryCapacity, color, price);
+            int result = brand != null ? brand.hashCode() : 0;
+            result = 31 * result + maxSpeed;
+            result = 31 * result + bikeWeight;
+            result = 31 * result + (isFrontAndBackLight ? 1 : 0);
+            result = 31 * result + batteryCapacity;
+            result = 31 * result + (color != null ? color.hashCode() : 0);
+            result = 31 * result + price;
+            return result;
         }
     }
 }

@@ -24,4 +24,14 @@ public class StringToBikeParser {
         return new BikeFactory().getBike(bikeType, properties);
 
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }
