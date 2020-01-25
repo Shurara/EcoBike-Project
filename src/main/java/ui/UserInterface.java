@@ -2,9 +2,7 @@ package ui;
 
 import data_processing.BikeCatalog;
 import data_processing.BikeToFileSaver;
-import data_processing.FileChangeChecker;
 import factories.BikeFactory;
-import org.w3c.dom.ls.LSOutput;
 
 public class UserInterface {
     public void createStartMenu() {

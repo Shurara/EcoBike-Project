@@ -28,16 +28,15 @@ public class BikeCatalog {
                 .stream()
                 .map(string -> StringToBikeParser.parseProperties(string))
                 .collect(Collectors.toCollection(ArrayList::new));
-        FileChangeChecker.setStartValue(createdList);
         return createdList;
     }
 
     public static void addBikeToList(Bike bike) {
-        System.out.println(getList().size());
+        System.out.printf("The catalog contained %d models \n",  getList().size());
         getList().add(bike);
         setCatalogChanged(true);
         System.out.println("Bike was added to catalog");
-        System.out.println(getList().size());
+        System.out.printf("Now the catalog contains %d \n",  getList().size());
     }
 
     public static boolean catalogIsChanged() {

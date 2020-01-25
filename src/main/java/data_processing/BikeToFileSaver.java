@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 public class BikeToFileSaver {
 
     public static void save(List<Bike> list, Path path) {
-        FileChangeChecker.setFinishValue(list);
         list.stream()
                 .map(bike -> bike.convertBikeToWrite())
                 .forEach(x -> {
