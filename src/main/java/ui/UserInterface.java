@@ -57,7 +57,11 @@ public class UserInterface {
                 System.out.println("Ok! Lets add a new folding bike instance");
                 InputBikeData data = new InputBikeData();
                 data.setFullFoldingBikeData();
+                System.out.printf("The catalog contains %d models \n",  BikeCatalog.getList().size());
                 BikeCatalog.addBikeToList(BikeFactory.getBike(TextConstants.getFoldingBike(), data));
+                pressEnterToContinue();
+                System.out.println("Bike was added to catalog");
+                System.out.printf("Now the catalog contains %d \n",  BikeCatalog.getList().size());
                 System.out.println("*********************************************************");
                 returnToMineMenu();
                 break;
@@ -68,9 +72,12 @@ public class UserInterface {
                 System.out.println("Ok! Lets add a new speedelec bike instance");
                 InputBikeData spData = new InputBikeData();
                 spData.setFullElectroBikeData();
+                System.out.printf("The catalog contains %d models \n",  BikeCatalog.getList().size());
                 BikeCatalog.addBikeToList(BikeFactory.getBike(TextConstants.getSpeedelecType(), spData));
-                System.out.println("*********************************************************");
                 pressEnterToContinue();
+                System.out.println("Bike was added to catalog");
+                System.out.printf("Now the catalog contains %d \n",  BikeCatalog.getList().size());
+                System.out.println("*********************************************************");
                 returnToMineMenu();
                 break;
             case 4:
@@ -80,7 +87,11 @@ public class UserInterface {
                 System.out.println("Ok! Lets add a new e-bike bike instance");
                 InputBikeData eData = new InputBikeData();
                 eData.setFullElectroBikeData();
+                System.out.printf("The catalog contains %d models \n",  BikeCatalog.getList().size());
                 BikeCatalog.addBikeToList(BikeFactory.getBike(TextConstants.getEBikeType(), eData));
+                pressEnterToContinue();
+                System.out.println("Bike was added to catalog");
+                System.out.printf("Now the catalog contains %d \n",  BikeCatalog.getList().size());
                 System.out.println("*********************************************************");
                 returnToMineMenu();
                 break;

@@ -1,5 +1,7 @@
 package ui;
 
+import java.io.File;
+import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -23,25 +25,15 @@ public class FilePathGetter {
         System.out.println("If you specify an invalid path, the default file will be uploaded - \"src/ecobike.txt\" ");
         System.out.println("========================================================================================");
         System.out.println("");
-        String stringValue = inputPath(TextConstants.getInputPathMessage(), TextConstants.getPATH(), TextConstants.getNotEmptyStringMessage());
-        if (isValidPath(stringValue)) {
-            setPath(Paths.get(stringValue));
-            System.out.println(stringValue + " loaded");
+        String inputPath = inputPath(TextConstants.getInputPathMessage(), TextConstants.getPATH(), TextConstants.getNotEmptyStringMessage());
+        Path path = new File(inputPath).toPath();
+        if ( Files.exists(path)) {
+            setPath(Paths.get(inputPath));
+            System.out.println(inputPath + " loaded");
         } else {
             setPath(Paths.get("src/ecobike.txt"));
             System.out.println(TextConstants.getPATH() + " loaded");
         }
-
-
-    }
-
-    public static boolean isValidPath(String path) {
-        try {
-            Paths.get(path);
-        } catch (InvalidPathException | NullPointerException ex) {
-            return false;
-        }
-        return true;
     }
 
     private static String inputPath(String welcomeMessage, String param, String mistakeMessage) {

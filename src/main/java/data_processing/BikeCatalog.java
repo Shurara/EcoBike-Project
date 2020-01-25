@@ -3,6 +3,7 @@ package data_processing;
 import model.Bike;
 import model.Product;
 import ui.FilePathGetter;
+import ui.UserInterface;
 
 
 import java.util.ArrayList;
@@ -32,11 +33,8 @@ public class BikeCatalog {
     }
 
     public static void addBikeToList(Bike bike) {
-        System.out.printf("The catalog contained %d models \n",  getList().size());
         getList().add(bike);
         setCatalogChanged(true);
-        System.out.println("Bike was added to catalog");
-        System.out.printf("Now the catalog contains %d \n",  getList().size());
     }
 
     public static boolean catalogIsChanged() {
