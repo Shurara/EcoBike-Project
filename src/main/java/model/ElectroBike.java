@@ -26,12 +26,12 @@ public class ElectroBike extends Bike {
 
     @Override
     public String convertBikeToWrite() {
-        return super.convertBikeToWrite() + ";" +
-                getMaxSpeed() + ";" +
-                getBikeWeight() + ";" +
-                getFrontAndBackLight() + ";" +
-                getBatteryCapacity() + ";" +
-                getColor() + ";" +
+        return super.convertBikeToWrite() + "; " +
+                getMaxSpeed() + "; " +
+                getBikeWeight() + "; " +
+                getFrontAndBackLight() + "; " +
+                getBatteryCapacity() + "; " +
+                getColor() + "; " +
                 getPrice();
     }
 

@@ -1,5 +1,6 @@
 package data_processing;
 
+import model.Bike;
 import model.Product;
 import ui.FilePathGetter;
 
@@ -14,9 +15,17 @@ public class Search {
     public static void initialProductList() {
         productList = getProduct();
     }
-    public static List<Product> getProduct() {
+   /* public static List<Product> getProduct() {
         return new DataWriter().getDataFromFile(FilePathGetter.getPath())
                 .stream()
+                .map(string -> ParseStringToProduct.parseProperties(string))
+                .collect(Collectors.toCollection(ArrayList::new));
+    }*/
+
+    public static List<Product> getProduct() {
+        return  BikeCatalog.getList()
+                .stream()
+                .map(bike -> bike.convertBikeToWrite())
                 .map(string -> ParseStringToProduct.parseProperties(string))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
@@ -35,5 +44,9 @@ public class Search {
                 .filter(param -> !param.getValue().isEmpty())
                 .allMatch(param -> param.getValue().equalsIgnoreCase(features.get(param.getKey())));
     }
+
+
+
+
 
 }

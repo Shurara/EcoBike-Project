@@ -28,12 +28,12 @@ public class FoldingBike extends Bike {
 
     @Override
     public String convertBikeToWrite() {
-        return "FOLDING BIKE " + super.convertBikeToWrite() + ";" +
-                getWheelsSizeInch() + ";" +
-                getGearsNumber() + ";" +
-                getBikeWeight() + ";" +
-                getFrontAndBackLight() + ";" +
-                getColor() + ";" +
+        return "FOLDING BIKE " + super.convertBikeToWrite() + "; " +
+                getWheelsSizeInch() + "; " +
+                getGearsNumber() + "; " +
+                getBikeWeight() + "; " +
+                getFrontAndBackLight() + "; " +
+                getColor() + "; " +
                 getPrice();
 
     }

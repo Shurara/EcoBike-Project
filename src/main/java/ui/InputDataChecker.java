@@ -1,5 +1,7 @@
 package ui;
 
+import data_processing.Fields;
+
 import java.util.Scanner;
 import java.util.function.Predicate;
 
@@ -53,6 +55,9 @@ public class InputDataChecker {
         switch (getYesOrNoAnswer()) {
             case "y": {
                 System.out.printf("Please input %s parameter \n", parameter);
+                /*switch (parameter){
+                    case Fields.ISFRONTANDBACKLIGHT:
+                }*/
                 value = getStringValue(str -> str == null || str.trim().isEmpty(), "String must be not empty");
                 break;
             }
