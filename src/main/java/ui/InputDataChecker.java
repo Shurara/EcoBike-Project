@@ -1,11 +1,13 @@
 package ui;
 
-import data_processing.Fields;
 
+
+import java.util.List;
 import java.util.Scanner;
 import java.util.function.Predicate;
 
 public class InputDataChecker {
+
 
     public static int getNubmerValue(Predicate<Integer> predicate, String mistakeMessage) {
         Scanner sc = new Scanner(System.in);
@@ -49,16 +51,22 @@ public class InputDataChecker {
 
 
     public static String getSearchParameters(String parameter) {
+        List<String> numberParams = List.of("weight", "price", "speed", "capacity", "size", "number");
         String value = "";
         System.out.printf("Would you like add the %s to search parameters? \n", parameter);
 
         switch (getYesOrNoAnswer()) {
             case "y": {
                 System.out.printf("Please input %s parameter \n", parameter);
-                /*switch (parameter){
-                    case Fields.ISFRONTANDBACKLIGHT:
-                }*/
-                value = getStringValue(str -> str == null || str.trim().isEmpty(), "String must be not empty");
+                String buleanParam = "TRUE/FALSE";
+                if (numberParams.stream()
+                        .anyMatch(x -> parameter.indexOf(x) != -1)) {
+                    value = Integer.toString(getNubmerValue(i -> i < 0, TextConstants.getPositiveNumberMessage()));
+                } else if (parameter.contains(buleanParam)) {
+                    value = Boolean.toString(getBooleanValue(x -> !"true".equalsIgnoreCase(x) && !"false".equalsIgnoreCase(x), TextConstants.getBooleanValueMessage()));
+                } else {
+                    value = getStringValue(str -> str == null || str.trim().isEmpty(), "String must be not empty");
+                }
                 break;
             }
             case "n": {
