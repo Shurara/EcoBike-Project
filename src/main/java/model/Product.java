@@ -1,7 +1,7 @@
 package model;
 
 import java.util.Map;
-import java.util.Objects;
+
 
 public class Product {
     private Map<String, String> features;
