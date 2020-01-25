@@ -5,7 +5,7 @@ import model.Bike;
 public class BikeToStringParser {
     public static String getStringFromBike(Bike bike){
 
-        String result = bike.convertBikeToWrite();;
+        String result = bike.convertBikeToSring();;
         /*String bikeType ="";
         if("FoldingBike".equals(bike.getClass().getSimpleName())){
             bike.convertBikeToWrite();

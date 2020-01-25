@@ -1,6 +1,7 @@
 package data_processing;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import model.Product;
@@ -43,7 +44,7 @@ public class ParseStringToProduct {
     }
 
     private static Product createProduct(String bikeType, String[] properties) {
-        Map<String, String > result = new HashMap<>();
+        Map<String, String > result = new LinkedHashMap<String, String>();
         if (bikeType.equalsIgnoreCase("FOLDING BIKE")) {
             result =  getFeaturesForFoldingBike(properties);
         } else if (bikeType.equalsIgnoreCase("SPEEDELEC")) {
@@ -60,8 +61,7 @@ public class ParseStringToProduct {
 
 
     private static Map<String, String>  getFeaturesForFoldingBike(String[] properties) {
-        Map<String, String> result = new HashMap<>();
-
+        Map<String, String> result = new LinkedHashMap<>();
         result.put(TYPE.getName(), FOLDINGBIKE.getName());
         result.put(BRAND.getName(), properties[0].trim());
         result.put(WHEELSSIZEINCH.getName(), properties[1].trim());
@@ -75,7 +75,7 @@ public class ParseStringToProduct {
     }
 
     private static Map<String, String> getFeaturesForSpeedelecAndEbikeBike(String[] properties) {
-        Map<String, String> result = new HashMap<>();
+        Map<String, String> result = new LinkedHashMap<>();
         result.put(BRAND.getName(), properties[0].trim());
         result.put(MAXSPEED.getName(), properties[1].trim());
         result.put(BIKEWEIGHT.getName(), properties[2].trim());

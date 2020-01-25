@@ -116,7 +116,6 @@ public class UserInterface {
 
                 } else {
                     System.out.println("Your data has not changed");
-                    pressEnterToContinue();
                     returnToMineMenu();
                 }
                 returnToMineMenu();

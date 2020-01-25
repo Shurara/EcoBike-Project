@@ -1,6 +1,5 @@
 package data_processing;
 
-import model.Bike;
 import model.Product;
 import ui.FilePathGetter;
 
@@ -15,17 +14,17 @@ public class Search {
     public static void initialProductList() {
         productList = getProduct();
     }
-   /* public static List<Product> getProduct() {
+    public static List<Product> getProduct() {
         return new DataWriter().getDataFromFile(FilePathGetter.getPath())
                 .stream()
                 .map(string -> ParseStringToProduct.parseProperties(string))
                 .collect(Collectors.toCollection(ArrayList::new));
-    }*/
+    }
 
-    public static List<Product> getProduct() {
+    public static List<Product> getProductFromList() {
         return  BikeCatalog.getList()
                 .stream()
-                .map(bike -> bike.convertBikeToWrite())
+                .map(bike -> bike.convertBikeToSring())
                 .map(string -> ParseStringToProduct.parseProperties(string))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
@@ -34,8 +33,10 @@ public class Search {
         List<Product> collect = productList.parallelStream()
                 .filter(item -> filterByFeatures(searchValue, item.getFeatures()))
                 .collect(Collectors.toList());
-        //TODO:if you want pretty nice view, you can implement here
-        collect.forEach(System.out::println);
+
+        collect.forEach(x ->System.out.println("According to your search parameters found" + x));
+
+
     }
 
     private static boolean filterByFeatures(Map<String, String> filter, Map<String, String> features) {

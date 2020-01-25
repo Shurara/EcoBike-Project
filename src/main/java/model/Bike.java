@@ -35,7 +35,7 @@ public class Bike {
                         ", price = " + getPrice();
     }
 
-    public String convertBikeToWrite() {
+    public String convertBikeToSring() {
         return getBrand();
     }
 

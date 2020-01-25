@@ -18,7 +18,7 @@ public class Speedelec extends ElectroBike {
     }
 
     @Override
-    public String convertBikeToWrite() {
-        return "SPEEDELEC " + super.convertBikeToWrite();
+    public String convertBikeToSring() {
+        return "SPEEDELEC " + super.convertBikeToSring();
     }
 }

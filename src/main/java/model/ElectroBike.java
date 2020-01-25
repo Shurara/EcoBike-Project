@@ -25,8 +25,8 @@ public class ElectroBike extends Bike {
     }
 
     @Override
-    public String convertBikeToWrite() {
-        return super.convertBikeToWrite() + "; " +
+    public String convertBikeToSring() {
+        return super.convertBikeToSring() + "; " +
                 getMaxSpeed() + "; " +
                 getBikeWeight() + "; " +
                 getFrontAndBackLight() + "; " +
