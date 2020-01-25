@@ -2,6 +2,7 @@ package ui;
 
 import data_processing.BikeCatalog;
 import data_processing.BikeToFileSaver;
+import data_processing.Search;
 import factories.BikeFactory;
 
 public class UserInterface {
@@ -99,7 +100,11 @@ public class UserInterface {
                 System.out.println("You selected - Find the first item of a particular brand");
                 System.out.println("*********************************************************");
                 System.out.println("Ok! Ok let's start search");
-                InputSearchParams.getSearchValues();
+                InputSearchParams inputParameters = new InputSearchParams();
+                inputParameters.getSearchValues();
+                inputParameters.showSelectedParams();
+                pressEnterToContinue();
+                Search.searchBike(inputParameters.getRequestParameters());
                 returnToMineMenu();
                 break;
             case 6:

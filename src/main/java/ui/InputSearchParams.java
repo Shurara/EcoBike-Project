@@ -6,31 +6,36 @@ import java.util.Map;
 import data_processing.Search;
 
 public class InputSearchParams {
-    public static void getSearchValues() {
+    private Map<String, String> requestParameters = new HashMap<>();
 
-        Map<String, String> requestParameters = new HashMap<>();
+    public Map<String, String> getRequestParameters() {
+        return requestParameters;
+    }
+
+    public void getSearchValues() {
 
         //FOLDING BIKE
         String wheelsSizeInch = TextConstants.getWheelsSizeInch();
         String gearsNumber = TextConstants.getGearsNumber();
 
         //ELECTROBIKE
-        String maxSpeed = "maximum speed (in km/h)";
-        String batteryCapacity = "battery capacity (in mAh)";
+        String maxSpeed = TextConstants.getMaxSpeed();
+        String batteryCapacity = TextConstants.getBatteryCapacity();
 
         //BIKE
-        String brand = TextConstants.getBrand();
         String bikeWeight = TextConstants.getBikeWeight();
         String isFrontAndBackLight = TextConstants.getFrontAndBackLight();
         String color = TextConstants.getColor();
         String price = TextConstants.getPrice();
 
-        inputParameters(requestParameters, wheelsSizeInch, gearsNumber, maxSpeed, batteryCapacity);
 
+        inputParameters(requestParameters, wheelsSizeInch, gearsNumber, maxSpeed, batteryCapacity);
         addBaseSearchParameters(requestParameters, bikeWeight, isFrontAndBackLight, color, price);
 
-        //call search
-        Search.searchBike(requestParameters);
+    }
+
+    public void showSelectedParams(){
+        System.out.println("You selected  parameter for seaarch: " + requestParameters);
     }
 
     private static void inputParameters(Map<String, String> requestParameters, String wheelsSizeInch, String gearsNumber, String maxSpeed, String batteryCapacity) {
@@ -54,8 +59,8 @@ public class InputSearchParams {
         }
     }
 
-    private static void getBrandForSearch(Map<String, String> requestParameters, String brand2, String brandFromUser) {
-        requestParameters.put(brand2, brandFromUser);
+    private static void getBrandForSearch(Map<String, String> requestParameters, String brand, String brandFromUser) {
+        requestParameters.put(brand, brandFromUser);
     }
 
 
@@ -105,4 +110,6 @@ public class InputSearchParams {
             }
         }
     }*/
+
+
 }
