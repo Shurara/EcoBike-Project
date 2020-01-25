@@ -93,7 +93,6 @@ public class UserInterface {
                 pressEnterToContinue();
                 System.out.println("Bike was added to catalog");
                 System.out.printf("Now the catalog contains %d \n", BikeCatalog.getList().size());
-                System.out.println("*********************************************************");
                 returnToMineMenu();
                 break;
             case 5:
@@ -105,6 +104,7 @@ public class UserInterface {
                 inputParameters.showSelectedParams();
                 pressEnterToContinue();
                 Search.searchBike(inputParameters.getRequestParameters());
+                System.out.println("*********************************************************");
                 returnToMineMenu();
                 break;
             case 6:
@@ -118,6 +118,7 @@ public class UserInterface {
                     System.out.println("Your data has not changed");
                     returnToMineMenu();
                 }
+                System.out.println("*********************************************************");
                 returnToMineMenu();
                 break;
 

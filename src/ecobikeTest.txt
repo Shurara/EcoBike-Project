@@ -1,0 +1,3 @@
+FOLDING BIKE Formula; 16; 21; 12200; true; flame; 269
+E-BIKE ElectrO; 20; 19300; true; 14000; beige; 1025
+SPEEDELEC Dualtron; 30; 14400; true; 6500; dark gray; 1019

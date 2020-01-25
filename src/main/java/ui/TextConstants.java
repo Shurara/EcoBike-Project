@@ -10,27 +10,27 @@ public class TextConstants {
     private static final String  E_BIKE ="E-BIKE";
 
     //MESSAGE
-    private static final String WelcomeMessage = "Please input %s of Bike.. ";
-    private static final String inputPathMessage = "Please set path to data file. For example %s ";
-    private static final String notEmptyStringMessage = "String must be not empty";
-    private static final String positiveNumberMessage = "Entered number must be > 0";
-    private static final String booleanValueMessage = "Value can be only true or false!";
+    private static final String WelcomeMessage = "Please input %s of Bike.. \n";
+    private static final String inputPathMessage = "Please set path to data file. For example %s \n";
+    private static final String notEmptyStringMessage = "String must be not empty \n";
+    private static final String positiveNumberMessage = "Entered number must be > 0 \n";
+    private static final String booleanValueMessage = "Value can be only true or false! \n";
 
 
     //FOLDING BIKE
-    private static final String wheelsSizeInch = "size of the wheels (in inch)";
-    private static String gearsNumber = "number of gears";
+    private static final String wheelsSizeInch = "size of the wheels (in inch)\n";
+    private static String gearsNumber = "number of gears \n";
 
     //ELECTROBIKE
-    private static final String maxSpeed = "maximum speed (in km/h)";
-    private static final String batteryCapacity = "battery capacity (in mAh)";
+    private static final String maxSpeed = "maximum speed (in km/h)\n";
+    private static final String batteryCapacity = "battery capacity (in mAh)\n";
 
     //BIKE
     private static final String brand = "brand";
-    private static final String bikeWeight = "weight of the bike (in grams)";
-    private static final String isFrontAndBackLight = "availability of lights at front and back (TRUE/FALSE)";
-    private static final String color = "color";
-    private static final String price = "price";
+    private static final String bikeWeight = "weight of the bike (in grams)\n";
+    private static final String isFrontAndBackLight = "availability of lights at front and back (TRUE/FALSE) \n";
+    private static final String color = "color \n";
+    private static final String price = "price \n";
 
     public static String getInputWelcomeMessage() {
         return WelcomeMessage;

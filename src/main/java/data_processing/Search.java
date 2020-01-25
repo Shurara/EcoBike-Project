@@ -34,8 +34,11 @@ public class Search {
         List<Product> collect = productList.parallelStream()
                 .filter(item -> filterByFeatures(searchValue, item.getFeatures()))
                 .collect(Collectors.toList());
-
-        collect.forEach(x -> System.out.println("According to your search parameters found" + x));
+        if (collect.isEmpty()) {
+            System.out.println("No matches found.. Try change your search parameters ");
+        } else {
+            collect.forEach(x -> System.out.println("According to your search parameters found: " + x));
+        }
 
 
     }
