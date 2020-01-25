@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
         try {
             stringList = Files.lines(path).collect(Collectors.toCollection(ArrayList::new));
         } catch (IOException e) {
-            System.out.println("Файл не найден, проверьте его месторасположение");
+            System.out.println("File not found, default file uploaded");
         }
         return stringList;
     }

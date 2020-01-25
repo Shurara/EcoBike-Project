@@ -64,21 +64,24 @@ public class InputDataChecker {
         return value;
     }
 
-    private static String getYesOrNoAnswer() {
+    static String getYesOrNoAnswer() {
         System.out.println("Please enter  y (yes) or n (no)");
         return getStringValue(str -> !"y".equalsIgnoreCase(str) && !"n".equalsIgnoreCase(str), "Don't rush! Only y or n!");
     }
 
-    static String getBykeType() {
+    static String getBikeType() {
         System.out.println("What type of bike will you look for?");
         System.out.println("Please press F if it will be Folding Bike");
-        System.out.println("Please press E if it will be E-Bike or Speedelec");
+        System.out.println("Please press E if it will be E-Bike");
+        System.out.println("Please press S if it will be Speedelec");
         System.out.println("");
-        return getStringValue(str -> !"f".equalsIgnoreCase(str) && !"e".equalsIgnoreCase(str), "Don't rush! You can choose only F or E!");
+        return getStringValue(str -> !"f".equalsIgnoreCase(str) && !"e".equalsIgnoreCase(str) && !"s".equalsIgnoreCase(str), "Don't rush! You can choose only F or E or S!");
     }
 
-
-
+    public static String getBrandFromUser() {
+        System.out.println("Please input brand parameter ");
+        return getStringValue(str -> str == null || str.trim().isEmpty(), "String must be not empty");
+    }
 
 
 }

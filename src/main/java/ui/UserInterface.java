@@ -89,21 +89,21 @@ public class UserInterface {
             case 5:
                 System.out.println("You selected - Find the first item of a particular brand");
                 System.out.println("*********************************************************");
-                System.out.println("Ok! Lets start finding");
+                System.out.println("Ok! Ok let's start search");
                 InputSearchParams.getSearchValues();
                 returnToMineMenu();
                 break;
             case 6:
                 System.out.println("You selected - Write to file");
                 System.out.println("*********************************************************");
-                if (FileChangeChecker.changeCheck()) {
+                if (BikeCatalog.catalogIsChanged()) {
                     BikeToFileSaver.save(BikeCatalog.getList(), FilePathGetter.getPath());
+                    System.out.println("Your data have been saved in " + FilePathGetter.getPath());
+
                 } else {
                     System.out.println("Your data has not changed");
                     pressEnterToContinue();
                     returnToMineMenu();
-
-
                 }
                 returnToMineMenu();
                 break;
@@ -111,6 +111,19 @@ public class UserInterface {
             case 7:
                 System.out.println("You selected - Stop the program");
                 System.out.println("*********************************************************");
+                if (BikeCatalog.catalogIsChanged()){
+                    System.out.println("Your data have been changed. Save it?");
+                    String answer = InputDataChecker.getYesOrNoAnswer();
+                    switch (answer) {
+                        case"y":{
+                            System.out.println("Your data will be saved in + " + FilePathGetter.getPath());
+                            BikeToFileSaver.save(BikeCatalog.getList(), FilePathGetter.getPath());
+                        }
+                        case"n":{
+                            System.out.println("No problem!");
+                        }
+                    }
+                }
                 System.out.println("Thank you for using our software! Good luck!");
                 pressEnterToContinue();
                 System.exit(0);

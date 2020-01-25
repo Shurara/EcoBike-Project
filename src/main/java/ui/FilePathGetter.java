@@ -24,13 +24,13 @@ public class FilePathGetter {
         System.out.println("========================================================================================");
         System.out.println("");
         String stringValue = inputPath(TextConstants.getInputPathMessage(), TextConstants.getPATH(), TextConstants.getNotEmptyStringMessage());
-        if (isValidPath(stringValue)) {
+      /*  if (isValidPath(stringValue)) {
             setPath(Paths.get(stringValue));
             System.out.println(stringValue + " loaded");
-        } else {
+        } else {*/
             setPath(Paths.get("src/ecobike.txt"));
             System.out.println(TextConstants.getPATH() + " loaded");
-        }
+       // }
 
 
     }

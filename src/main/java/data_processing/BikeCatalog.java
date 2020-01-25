@@ -1,12 +1,13 @@
 package data_processing;
 
 import model.Bike;
+import model.Product;
 import ui.FilePathGetter;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class BikeCatalog {
@@ -50,4 +51,5 @@ public class BikeCatalog {
     public static List<Bike> getList() {
         return list == null ? getListFromFile() : list;
     }
+
 }
