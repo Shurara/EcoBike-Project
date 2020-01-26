@@ -31,7 +31,7 @@ public class Bike {
                 "brand = '" + getBrand() + '\'' +
                         ", bikeWeight = " + getBikeWeight() +
                         ", isFrontAndBackLight = " + getFrontAndBackLight() +
-                        ", color =' " + getColor() + '\'' +
+                        ", color = " + getColor() + '\'' +
                         ", price = " + getPrice();
     }
 
