@@ -1,5 +1,7 @@
 package data_processing;
 
+import factories.BikeFactory;
+import model.Bike;
 import model.Product;
 import ui.FilePathGetter;
 
@@ -31,8 +33,9 @@ public class Search {
     }
 
     public static void searchBike(Map<String, String> searchValue) {
-        List<Product> collect = productList.parallelStream()
+        List<Bike> collect = productList.parallelStream()
                 .filter(item -> filterByFeatures(searchValue, item.getFeatures()))
+                .map(product -> BikeFactory.getBike(product))
                 .collect(Collectors.toList());
         if (collect.isEmpty()) {
             System.out.println("No matches found.. Try change your search parameters ");

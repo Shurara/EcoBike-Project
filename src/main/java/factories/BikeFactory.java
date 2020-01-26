@@ -3,6 +3,20 @@ package factories;
 import model.*;
 import ui.InputBikeData;
 
+import static data_processing.Fields.BATTERYCAPACITY;
+import static data_processing.Fields.BIKEWEIGHT;
+import static data_processing.Fields.BRAND;
+import static data_processing.Fields.COLOR;
+import static data_processing.Fields.EBIKE;
+import static data_processing.Fields.FOLDINGBIKE;
+import static data_processing.Fields.GEARSNUMBER;
+import static data_processing.Fields.ISFRONTANDBACKLIGHT;
+import static data_processing.Fields.MAXSPEED;
+import static data_processing.Fields.PRICE;
+import static data_processing.Fields.SPEEDELEC;
+import static data_processing.Fields.TYPE;
+import static data_processing.Fields.WHEELSSIZEINCH;
+
 public class BikeFactory implements Factory {
 
     public Bike getBike(String bikeType, String[] properties) {
@@ -33,6 +47,23 @@ public class BikeFactory implements Factory {
                 break;
             case "E-BIKE":
                 bike = getEBike(bikeType, data);
+                break;
+        }
+        return bike;
+    }
+
+    public static Bike getBike(Product product) {
+        Bike bike = new Bike();
+        String bikeType = product.getFeatures().get(TYPE.getName());
+        switch (bikeType) {
+            case "FOLDING BIKE":
+                bike = getFoldingBike(product);
+                break;
+            case "SPEEDELEC":
+                bike = getSpeedelec(bikeType, product);
+                break;
+            case "E-BIKE":
+                bike = getEBike(bikeType, product);
                 break;
         }
         return bike;
@@ -118,5 +149,48 @@ public class BikeFactory implements Factory {
 
     }
 
+    private static FoldingBike getFoldingBike(Product product) {
+        product.getFeatures().get(WHEELSSIZEINCH.getName());
+        FoldingBike foldingBike = new FoldingBike.Builder()
+                .setBrand(product.getFeatures().get(BRAND.getName()))
+                .setWheelsSizeInch(Integer.parseInt(product.getFeatures().get(WHEELSSIZEINCH.getName())))
+                .setGearsNumber(Integer.parseInt(product.getFeatures().get(GEARSNUMBER.getName())))
+                .setBikeWeight(Integer.parseInt(product.getFeatures().get(BIKEWEIGHT.getName())))
+                .setFrontAndBackLight(Boolean.parseBoolean(product.getFeatures().get(ISFRONTANDBACKLIGHT.getName())))
+                .setColor(product.getFeatures().get(COLOR.getName()))
+                .setPrice(Integer.parseInt(product.getFeatures().get(PRICE.getName())))
+                .build();
+
+        return foldingBike;
+
+    }
+
+    private static ElectroBike getSpeedelec(String bikeType, Product product) {
+        ElectroBike eBike = new Speedelec.Builder()
+                .setBrand(product.getFeatures().get(BRAND.getName()))
+                .setMaxSpeed(Integer.parseInt(product.getFeatures().get(MAXSPEED.getName())))
+                .setBikeWeight(Integer.parseInt(product.getFeatures().get(BIKEWEIGHT.getName())))
+                .setFrontAndBackLight(Boolean.parseBoolean(product.getFeatures().get(ISFRONTANDBACKLIGHT.getName())))
+                .setBatteryCapacity(Integer.parseInt(product.getFeatures().get(BATTERYCAPACITY.getName())))
+                .setColor(product.getFeatures().get(COLOR.getName()))
+                .setPrice(Integer.parseInt(product.getFeatures().get(PRICE.getName())))
+                .build(bikeType);
+
+        return eBike;
+    }
+
+    private static ElectroBike getEBike(String bikeType, Product product) {
+        ElectroBike eBike = new EBike.Builder()
+                .setBrand(product.getFeatures().get(BRAND.getName()))
+                .setMaxSpeed(Integer.parseInt(product.getFeatures().get(MAXSPEED.getName())))
+                .setBikeWeight(Integer.parseInt(product.getFeatures().get(BIKEWEIGHT.getName())))
+                .setFrontAndBackLight(Boolean.parseBoolean(product.getFeatures().get(ISFRONTANDBACKLIGHT.getName())))
+                .setBatteryCapacity(Integer.parseInt(product.getFeatures().get(BATTERYCAPACITY.getName())))
+                .setColor(product.getFeatures().get(COLOR.getName()))
+                .setPrice(Integer.parseInt(product.getFeatures().get(PRICE.getName())))
+                .build(bikeType);
+
+        return eBike;
+    }
 
 }

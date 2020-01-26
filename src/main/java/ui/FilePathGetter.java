@@ -29,11 +29,10 @@ public class FilePathGetter {
         Path path = new File(inputPath).toPath();
         if (Files.exists(path)) {
             setPath(Paths.get(inputPath));
-            System.out.println(inputPath + " loaded");
         } else {
             setPath(Paths.get("src/ecobike.txt"));
-            System.out.println(TextConstants.getPATH() + " loaded");
         }
+        System.out.println(getPath() + " loaded");
     }
 
     private static String inputPath(String welcomeMessage, String param, String mistakeMessage) {
