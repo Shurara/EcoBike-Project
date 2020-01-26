@@ -112,6 +112,7 @@ public class UserInterface {
                 System.out.println("*********************************************************");
                 if (BikeCatalog.catalogIsChanged()) {
                     BikeToFileSaver.save(BikeCatalog.getList(), FilePathGetter.getPath());
+                    BikeCatalog.setCatalogChanged(false);
                     System.out.println("Your data have been saved in " + FilePathGetter.getPath());
 
                 } else {
