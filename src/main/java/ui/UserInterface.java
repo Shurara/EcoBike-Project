@@ -129,7 +129,7 @@ public class UserInterface {
                     String answer = InputDataChecker.getYesOrNoAnswer();
                     switch (answer) {
                         case "y": {
-                            System.out.println("Your data will be saved in + " + FilePathGetter.getPath());
+                            System.out.println("Your data saved in " + FilePathGetter.getPath());
                             BikeToFileSaver.save(BikeCatalog.getList(), FilePathGetter.getPath());
                         }
                         case "n": {

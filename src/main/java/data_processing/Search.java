@@ -38,7 +38,7 @@ public class Search {
                 .map(product -> BikeFactory.getBike(product))
                 .collect(Collectors.toList());
         if (collect.isEmpty()) {
-            System.out.println("No matches found.. Try change your search parameters ");
+            System.out.println("No matches found.. Try to change your search parameters ");
         } else {
             collect.forEach(x -> System.out.println("According to your search parameters found: " + x));
         }
