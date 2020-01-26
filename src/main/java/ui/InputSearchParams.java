@@ -1,12 +1,12 @@
 package ui;
 
 
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.Map;
 
 
 public class InputSearchParams {
-    private Map<String, String> requestParameters = new LinkedHashMap<>();
+    private Map<String, String> requestParameters = new HashMap<>();
 
     public Map<String, String> getRequestParameters() {
         return requestParameters;

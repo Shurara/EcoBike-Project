@@ -44,14 +44,14 @@ public class ParseStringToProduct {
     }
 
     private static Product createProduct(String bikeType, String[] properties) {
-        Map<String, String> result = new LinkedHashMap<String, String>();
+        Map<String, String> result = new HashMap<String, String>();
         if (bikeType.equalsIgnoreCase("FOLDING BIKE")) {
             result = getFeaturesForFoldingBike(properties);
         } else if (bikeType.equalsIgnoreCase("SPEEDELEC")) {
             Map<String, String> featuresForSpeedelecBike = getFeaturesForSpeedelecAndEbikeBike(properties);
             featuresForSpeedelecBike.put(TYPE.getName(), SPEEDELEC.getName());
             result = featuresForSpeedelecBike;
-        } else if (bikeType.equalsIgnoreCase("BIKE")) {
+        } else if (bikeType.equalsIgnoreCase("E-BIKE")) {
             Map<String, String> featuresForEbikeBike = getFeaturesForSpeedelecAndEbikeBike(properties);
             featuresForEbikeBike.put(TYPE.getName(), EBIKE.getName());
             result = featuresForEbikeBike;
@@ -61,7 +61,7 @@ public class ParseStringToProduct {
 
 
     private static Map<String, String> getFeaturesForFoldingBike(String[] properties) {
-        Map<String, String> result = new LinkedHashMap<>();
+        Map<String, String> result = new HashMap<>();
         result.put(TYPE.getName(), FOLDINGBIKE.getName());
         result.put(BRAND.getName(), properties[0].trim());
         result.put(WHEELSSIZEINCH.getName(), properties[1].trim());

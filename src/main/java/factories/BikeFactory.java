@@ -150,7 +150,6 @@ public class BikeFactory implements Factory {
     }
 
     private static FoldingBike getFoldingBike(Product product) {
-        product.getFeatures().get(WHEELSSIZEINCH.getName());
         FoldingBike foldingBike = new FoldingBike.Builder()
                 .setBrand(product.getFeatures().get(BRAND.getName()))
                 .setWheelsSizeInch(Integer.parseInt(product.getFeatures().get(WHEELSSIZEINCH.getName())))
@@ -160,7 +159,6 @@ public class BikeFactory implements Factory {
                 .setColor(product.getFeatures().get(COLOR.getName()))
                 .setPrice(Integer.parseInt(product.getFeatures().get(PRICE.getName())))
                 .build();
-
         return foldingBike;
 
     }
@@ -175,7 +173,7 @@ public class BikeFactory implements Factory {
                 .setColor(product.getFeatures().get(COLOR.getName()))
                 .setPrice(Integer.parseInt(product.getFeatures().get(PRICE.getName())))
                 .build(bikeType);
-
+       // System.out.println(eBike);
         return eBike;
     }
 
@@ -189,7 +187,7 @@ public class BikeFactory implements Factory {
                 .setColor(product.getFeatures().get(COLOR.getName()))
                 .setPrice(Integer.parseInt(product.getFeatures().get(PRICE.getName())))
                 .build(bikeType);
-
+       // System.out.println(eBike);
         return eBike;
     }
 

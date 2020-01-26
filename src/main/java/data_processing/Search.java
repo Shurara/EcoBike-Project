@@ -8,6 +8,7 @@ import ui.FilePathGetter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Search {
@@ -33,7 +34,15 @@ public class Search {
     }
 
     public static void searchBike(Map<String, String> searchValue) {
-        List<Bike> collect = productList.parallelStream()
+
+        Optional<Bike> first = productList.parallelStream()
+                .filter(item -> filterByFeatures(searchValue, item.getFeatures()))
+                .map(product -> BikeFactory.getBike(product))
+                .findFirst();
+        first.ifPresentOrElse(x -> System.out.println("The first product of a particular brand according to search parameters found: \n " + x),
+                () -> System.out.println("No matches found.. Try to change your search parameters "));
+
+       /* List<Bike> collect = productList.parallelStream()
                 .filter(item -> filterByFeatures(searchValue, item.getFeatures()))
                 .map(product -> BikeFactory.getBike(product))
                 .collect(Collectors.toList());
@@ -41,7 +50,8 @@ public class Search {
             System.out.println("No matches found.. Try to change your search parameters ");
         } else {
             collect.forEach(x -> System.out.println("According to your search parameters found: " + x));
-        }
+        }*/
+
 
     }
 
