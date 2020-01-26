@@ -29,7 +29,7 @@ public class TextConstants {
     //BIKE
     private static final String BRAND = "brand";
     private static final String BIKE_WEIGHT = "weight of the bike (in grams)";
-    private static final String IS_FRONT_AND_BACK_LIGHT = "availability of lights at front and back (TRUE/FALSE) \n";
+    private static final String IS_FRONT_AND_BACK_LIGHT = "availability of lights at front and back (TRUE/FALSE) ";
     private static final String COLOR = "color ";
     private static final String PRICE = "price ";
 

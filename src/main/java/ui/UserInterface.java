@@ -95,6 +95,7 @@ public class UserInterface {
                 returnToMineMenu();
                 break;
             case 5:
+                Search.initialProductList();
                 System.out.println("You selected - Find the first item of a particular brand");
                 System.out.println("*********************************************************");
                 System.out.println("Ok! Ok let's start search");

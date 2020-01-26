@@ -4,6 +4,7 @@ import model.Bike;
 import ui.FilePathGetter;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,7 +25,7 @@ public class BikeCatalog {
         List<Bike> createdList = new DataWriter().getDataFromFile(FilePathGetter.getPath())
                 .stream()
                 .map(string -> StringToBikeParser.parseProperties(string))
-                .collect(Collectors.toCollection(ArrayList::new));
+                .collect(Collectors.toCollection(LinkedList::new));
         return createdList;
     }
 
